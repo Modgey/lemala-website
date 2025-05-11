@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Logos3 } from "@/components/logos3"
 import { DotPattern } from "@/components/ui/dot-pattern"
+import { cn } from "@/lib/utils"
 
 export default function Home() {
   return (
@@ -33,14 +34,17 @@ export default function Home() {
       </header>
 
       <main className="flex-grow">
-        <section className="container mx-auto px-6 md:px-4 py-12 md:py-20 text-center relative">
+        <section className="container mx-auto px-6 md:px-4 py-16 md:py-24 text-center relative overflow-hidden">
           <DotPattern 
             width={16} 
             height={16} 
             cx={1} 
             cy={1} 
             cr={1.5} 
-            className="opacity-50 -z-10 text-black/40" 
+            className={cn(
+              "text-black/40 -z-10",
+              "[mask-image:radial-gradient(800px_circle_at_center,white,transparent)]"
+            )}
           />
           
           <div className="inline-block mb-6 md:mb-10">
