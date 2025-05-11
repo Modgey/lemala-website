@@ -35,12 +35,12 @@ export default function Home() {
       <main className="flex-grow">
         <section className="container mx-auto px-6 md:px-4 py-12 md:py-20 text-center relative">
           <DotPattern 
-            width={20} 
-            height={20} 
+            width={16} 
+            height={16} 
             cx={1} 
             cy={1} 
-            cr={1} 
-            className="opacity-30 -z-10 text-[#c29bef]/20" 
+            cr={1.5} 
+            className="opacity-50 -z-10 text-black/40" 
           />
           
           <div className="inline-block mb-6 md:mb-10">
