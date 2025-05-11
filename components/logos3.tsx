@@ -75,22 +75,29 @@ const Logos3 = ({
   ],
 }: Logos3Props) => {
   return (
-    <section className="py-8 md:py-16">
+    <section className="py-2 md:py-6">
       <div className="container flex flex-col items-center text-center px-6 md:px-4">
-        <h2 className="mt-2 md:mt-8 mb-4 text-sm md:text-lg uppercase font-regular tracking-wider text-gray-600">
+        <h2 className="mt-0 mb-2 text-sm md:text-lg uppercase font-regular tracking-wider text-gray-600">
           {heading}
         </h2>
       </div>
-      <div className="pt-4 px-2 md:px-0">
+      <div className="pt-2 px-2 md:px-0">
         <div className="relative mx-auto flex items-center justify-center max-w-7xl">
           <Carousel
-            opts={{ loop: true }}
+            opts={{ 
+              loop: true,
+              align: "start",
+              startIndex: 1
+            }}
             plugins={[
               AutoScroll({ 
                 playOnInit: true, 
-                speed: 0.5,
+                speed: 1,
+                active: true,
+                startDelay: 0,
                 stopOnInteraction: false,
-                stopOnMouseEnter: false
+                stopOnMouseEnter: false,
+                rootNode: (emblaRoot) => emblaRoot
               })
             ]}
             className="w-full"
