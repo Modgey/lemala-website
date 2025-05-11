@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Logos3 } from "@/components/logos3"
+import { DotPattern } from "@/components/ui/dot-pattern"
 
 export default function Home() {
   return (
@@ -32,7 +33,16 @@ export default function Home() {
       </header>
 
       <main className="flex-grow">
-        <section className="container mx-auto px-6 md:px-4 py-12 md:py-20 text-center">
+        <section className="container mx-auto px-6 md:px-4 py-12 md:py-20 text-center relative">
+          <DotPattern 
+            width={20} 
+            height={20} 
+            cx={1} 
+            cy={1} 
+            cr={1} 
+            className="opacity-30 -z-10 text-[#c29bef]/20" 
+          />
+          
           <div className="inline-block mb-6 md:mb-10">
             <div className="px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full">
               <div className="flex items-center px-4 py-1.5 bg-[#f2f2f2] rounded-full">
