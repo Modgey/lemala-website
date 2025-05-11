@@ -40,9 +40,9 @@ export default function Home() {
             height={20} 
             cx={1} 
             cy={1} 
-            cr={1.8} 
+            cr={1.6} 
             className={cn(
-              "text-black/30 -z-20",
+              "text-black/25 -z-10",
               "[mask-image:radial-gradient(ellipse_1000px_400px_at_center,white,transparent)]"
             )}
           />
