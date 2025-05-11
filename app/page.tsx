@@ -36,14 +36,14 @@ export default function Home() {
       <main className="flex-grow">
         <section className="container mx-auto px-6 md:px-4 py-16 md:py-24 text-center relative overflow-hidden">
           <DotPattern 
-            width={16} 
-            height={16} 
+            width={20} 
+            height={20} 
             cx={1} 
             cy={1} 
-            cr={1.5} 
+            cr={1.8} 
             className={cn(
-              "text-black/40 -z-10",
-              "[mask-image:radial-gradient(ellipse_1000px_700px_at_center,white,transparent)]"
+              "text-black/30 -z-20",
+              "[mask-image:radial-gradient(ellipse_1000px_400px_at_center,white,transparent)]"
             )}
           />
           
