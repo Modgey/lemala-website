@@ -1,7 +1,0 @@
-[Cursor] Add new feature comparison section
-
-- Add feature comparison component with modern UI design
-- Create reusable Feature component for consistent styling
-- Update global styles for feature section
-- Enhance page layout with new feature section integration
-- Implement responsive design for all screen sizes

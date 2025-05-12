@@ -1,7 +1,7 @@
 "use client";
 
 import AutoScroll from "embla-carousel-auto-scroll";
-import Image from "next/image";
+
 import {
   Carousel,
   CarouselContent,
@@ -75,14 +75,14 @@ const Logos3 = ({
   ],
 }: Logos3Props) => {
   return (
-    <section className="py-3 md:py-5">
+    <section className="py-2 md:py-6">
       <div className="container flex flex-col items-center text-center px-6 md:px-4">
-        <h2 className="mt-0 mb-3 text-sm md:text-lg uppercase font-regular tracking-wider text-gray-600">
+        <h2 className="mt-0 mb-2 text-sm md:text-lg uppercase font-regular tracking-wider text-gray-600">
           {heading}
         </h2>
       </div>
       <div className="pt-2 px-2 md:px-0">
-        <div className="relative mx-auto flex items-center justify-center max-w-7xl overflow-hidden">
+        <div className="relative mx-auto flex items-center justify-center max-w-7xl">
           <Carousel
             opts={{ 
               loop: true,
@@ -92,11 +92,11 @@ const Logos3 = ({
             plugins={[
               AutoScroll({ 
                 playOnInit: true, 
-                speed: 1.5,
+                speed: 1,
                 active: true,
                 startDelay: 0,
                 stopOnInteraction: false,
-                stopOnMouseEnter: true,
+                stopOnMouseEnter: false,
                 rootNode: (emblaRoot) => emblaRoot
               })
             ]}
@@ -108,12 +108,12 @@ const Logos3 = ({
                   key={logo.id}
                   className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
                 >
-                  <div className="mx-5 md:mx-8 flex shrink-0 items-center justify-center transition-all duration-300 hover:scale-110">
+                  <div className="mx-10 md:mx-12 flex shrink-0 items-center justify-center">
                     <div>
                       <img
                         src={logo.image}
                         alt={logo.description}
-                        className={`opacity-65 hover:opacity-100 transition-opacity duration-300 ${logo.className}`}
+                        className={`opacity-65 ${logo.className}`}
                       />
                     </div>
                   </div>
@@ -121,8 +121,8 @@ const Logos3 = ({
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="absolute inset-y-0 left-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-16 md:w-24 bg-gradient-to-l from-background to-transparent z-10"></div>
+          <div className="absolute inset-y-0 left-0 w-20 md:w-28 bg-gradient-to-r from-background to-transparent"></div>
+          <div className="absolute inset-y-0 right-0 w-20 md:w-28 bg-gradient-to-l from-background to-transparent"></div>
         </div>
       </div>
     </section>

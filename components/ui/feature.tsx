@@ -5,7 +5,7 @@ function Feature() {
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="container mx-auto">
-        <div className="grid border rounded-lg container p-8 grid-cols-1 gap-8 items-center lg:grid-cols-2">
+        <div className="grid border rounded-lg container p-8 grid-cols-1 gap-8 items-center lg:grid-cols-2 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
           <div className="flex gap-10 flex-col">
             <div className="flex gap-4 flex-col">
               <div>

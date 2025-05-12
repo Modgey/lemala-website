@@ -16,7 +16,7 @@ export function FeaturesComparison() {
         {/* Top row: 2 columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {/* Voice Agent */}
-          <div className="border rounded-lg p-8">
+          <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
             <div className="mb-2">
               <Badge className="bg-[#e6f8e6] text-green-600 hover:bg-[#d4f0d4] border-green-600">AI Employee</Badge>
             </div>
@@ -48,7 +48,7 @@ export function FeaturesComparison() {
           </div>
           
           {/* Chat Agent */}
-          <div className="border rounded-lg p-8">
+          <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
             <div className="mb-2">
               <Badge className="bg-[#e6f8e6] text-green-600 hover:bg-[#d4f0d4] border-green-600">AI Employee</Badge>
             </div>
@@ -81,7 +81,7 @@ export function FeaturesComparison() {
         </div>
         
         {/* Bottom row: 1 wider column with image on the right */}
-        <div className="border rounded-lg p-8">
+        <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
           <div className="flex flex-col md:flex-row">
             <div className="md:w-2/3 pr-0 md:pr-8">
               <div className="mb-2">
