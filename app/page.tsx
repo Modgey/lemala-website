@@ -7,10 +7,22 @@ import { cn } from "@/lib/utils"
 import { Features } from "@/components/features-8"
 import { FeaturesComparison } from "@/components/features-comparison"
 import { LanguageSwitcher } from "@/src/components/language-switcher"
+import { DotPattern } from "@/components/ui/dot-pattern"
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <DotPattern
+        width={22}
+        height={22}
+        cx={1}
+        cy={1}
+        cr={1}
+        className={cn(
+          "[mask-image:linear-gradient(to_bottom,white,transparent_90%)]",
+          "absolute inset-0 h-screen w-full fill-gray-400/60 translate-x-1 translate-y-2 z-[-1]"
+        )}
+      />
       <BlurFade delay={0.05} duration={0.2}>
         <header className="flex items-center relative">
           <div className="w-44 ml-4 md:ml-10 py-5">
@@ -43,10 +55,10 @@ export default function Home() {
         </header>
       </BlurFade>
 
-      <main className="flex-grow">
+      <main className="flex-grow relative">
         <BlurFade delay={0.15} duration={0.2}>
           <section className="container mx-auto px-6 md:px-4 py-12 md:py-16 pb-6 md:pb-8 text-center relative overflow-hidden">
-            <div className="flex justify-center mb-8 md:mb-12">
+            <div className="flex justify-center mb-8 md:mb-12 relative">
               <div className="px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full">
                 <div className="flex items-center px-5 py-2 bg-[#f2f2f2] rounded-full">
                   <div className="w-3 h-3 rounded-full bg-green-500 mr-2.5 pulse-dot"></div>
@@ -56,7 +68,7 @@ export default function Home() {
             </div>
 
             <BlurFade delay={0.25} duration={0.2}>
-              <h1 className="text-4xl font-medium md:text-6xl lg:text-7xl md:font-normal mb-6 max-w-5xl mx-auto leading-tight">
+              <h1 className="text-4xl font-medium md:text-6xl lg:text-7xl md:font-normal mb-6 max-w-5xl mx-auto leading-tight relative">
                 SAY HELLO TO YOUR 
                 <span className="text-[var(--brand-color-text)] italic font-bold"> SMARTER </span> 
                 BUSINESS<span className="inline-block">👋</span>
@@ -64,7 +76,7 @@ export default function Home() {
             </BlurFade>
 
             <BlurFade delay={0.35} duration={0.2}>
-              <p className="text-lg md:text-2xl text-gray-600 max-w-[85%] md:max-w-3xl mx-auto mb-8 md:mb-10 px-2">
+              <p className="text-lg md:text-2xl text-gray-600 max-w-[85%] md:max-w-3xl mx-auto mb-8 md:mb-10 px-2 relative">
                 We take our time to understand your business, then build you <span className="font-bold">tailor-made</span>{" "}
                 AI workers and automations that fit your needs.
               </p>
@@ -73,7 +85,7 @@ export default function Home() {
             <BlurFade delay={0.45} duration={0.2}>
               <Link
                 href="#demo"
-                className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors"
+                className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors relative"
               >
                 BOOK DEMO CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
               </Link>
@@ -83,7 +95,7 @@ export default function Home() {
         
         <div className="py-8 md:py-12"></div>
         
-        <div className="bg-gray-0">
+        <div className="bg-gray-0 relative">
           <BlurFade delay={0.55} duration={0.2}>
             <Logos3 
               heading="Dozens of Success Stories" 
