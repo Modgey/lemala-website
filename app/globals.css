@@ -24,6 +24,11 @@
     --input: 0 0% 89.8%;
     --ring: 267 59% 70%;
     --radius: 0.5rem;
+    
+    /* Brand color - easily change this to update site accent color */
+    --brand-color: #ff85ff;
+    --brand-color-hover: #fb86ff;
+    --brand-color-text: #f56afa;
   }
 
   .dark {
@@ -46,6 +51,11 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 267 59% 70%;
+    
+    /* Keep brand colors the same in dark mode */
+    --brand-color: #c29bef;
+    --brand-color-hover: #b78ae8;
+    --brand-color-text: #a67ad5;
   }
 }
 

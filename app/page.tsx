@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react"
 import { Logos3 } from "@/components/logos3"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { cn } from "@/lib/utils"
+import { Features } from "@/components/features-8"
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
 
           <Link
             href="#contact"
-            className="bg-[#c29bef] text-black px-6 md:px-14 py-6 md:py-8 flex items-center hover:bg-[#b78ae8] transition-colors text-xl md:text-2xl absolute top-0 right-0 rounded-bl-3xl"
+            className="bg-[var(--brand-color)] text-black px-6 md:px-14 py-6 md:py-8 flex items-center hover:bg-[var(--brand-color-hover)] transition-colors text-xl md:text-2xl absolute top-0 right-0"
           >
             LET'S TALK <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
           </Link>
@@ -50,7 +51,7 @@ export default function Home() {
             <BlurFade delay={0.25} duration={0.2}>
               <h1 className="text-4xl font-medium md:text-6xl lg:text-7xl md:font-normal mb-6 max-w-5xl mx-auto leading-tight">
                 SAY HELLO TO YOUR 
-                <span className="text-[#a67ad5] italic font-bold"> SMARTER </span> 
+                <span className="text-[var(--brand-color-text)] italic font-bold"> SMARTER </span> 
                 BUSINESS<span className="inline-block">👋</span>
               </h1>
             </BlurFade>
@@ -65,7 +66,7 @@ export default function Home() {
             <BlurFade delay={0.45} duration={0.2}>
               <Link
                 href="#demo"
-                className="inline-flex items-center bg-[#c29bef] text-black px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium hover:bg-[#b78ae8] transition-colors"
+                className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors"
               >
                 BOOK DEMO CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
               </Link>
@@ -75,48 +76,54 @@ export default function Home() {
         
         <div className="py-8 md:py-12"></div>
         
-        <BlurFade delay={0.55} duration={0.2}>
-          <Logos3 
-            heading="PARTNERING WITH VISIONARIES" 
-            logos={[
-              {
-                id: "autods-1",
-                description: "AutoDS",
-                image: "/testimonial logos/AutoDS.png",
-                className: "h-12 w-auto opacity-80",
-              },
-              {
-                id: "mayaparking-1",
-                description: "Maya Parking",
-                image: "/testimonial logos/Mayaparking.png",
-                className: "h-12 w-auto opacity-80",
-              },
-              {
-                id: "autods-2",
-                description: "AutoDS",
-                image: "/testimonial logos/AutoDS.png",
-                className: "h-12 w-auto opacity-80",
-              },
-              {
-                id: "mayaparking-2",
-                description: "Maya Parking",
-                image: "/testimonial logos/Mayaparking.png",
-                className: "h-12 w-auto opacity-80",
-              },
-              {
-                id: "autods-3",
-                description: "AutoDS",
-                image: "/testimonial logos/AutoDS.png",
-                className: "h-12 w-auto opacity-80",
-              },
-              {
-                id: "mayaparking-3",
-                description: "Maya Parking",
-                image: "/testimonial logos/Mayaparking.png",
-                className: "h-12 w-auto opacity-80",
-              },
-            ]}
-          />
+        <div className="bg-gray-0">
+          <BlurFade delay={0.55} duration={0.2}>
+            <Logos3 
+              heading="Dozens of Success Stories" 
+              logos={[
+                {
+                  id: "autods-1",
+                  description: "AutoDS",
+                  image: "/testimonial logos/AutoDS.png",
+                  className: "h-12 w-auto opacity-80",
+                },
+                {
+                  id: "mayaparking-1",
+                  description: "Maya Parking",
+                  image: "/testimonial logos/Mayaparking.png",
+                  className: "h-12 w-auto opacity-80",
+                },
+                {
+                  id: "autods-2",
+                  description: "AutoDS",
+                  image: "/testimonial logos/AutoDS.png",
+                  className: "h-12 w-auto opacity-80",
+                },
+                {
+                  id: "mayaparking-2",
+                  description: "Maya Parking",
+                  image: "/testimonial logos/Mayaparking.png",
+                  className: "h-12 w-auto opacity-80",
+                },
+                {
+                  id: "autods-3",
+                  description: "AutoDS",
+                  image: "/testimonial logos/AutoDS.png",
+                  className: "h-12 w-auto opacity-80",
+                },
+                {
+                  id: "mayaparking-3",
+                  description: "Maya Parking",
+                  image: "/testimonial logos/Mayaparking.png",
+                  className: "h-12 w-auto opacity-80",
+                },
+              ]}
+            />
+          </BlurFade>
+        </div>
+        
+        <BlurFade delay={0.65} duration={0.2}>
+          <Features />
         </BlurFade>
       </main>
     </div>
