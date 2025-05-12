@@ -3,7 +3,7 @@ import { Phone, MessageCircle, Combine } from 'lucide-react'
 
 export function Features() {
     return (
-        <section className="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
+        <section className="py-16 md:py-32">
             <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
                 <div className="relative mb-12 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold">

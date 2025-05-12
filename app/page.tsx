@@ -5,6 +5,7 @@ import { Logos3 } from "@/components/logos3"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { cn } from "@/lib/utils"
 import { Features } from "@/components/features-8"
+import { FeaturesComparison } from "@/components/features-comparison"
 
 export default function Home() {
   return (
@@ -123,7 +124,7 @@ export default function Home() {
         </div>
         
         <BlurFade delay={0.65} duration={0.2}>
-          <Features />
+          <FeaturesComparison />
         </BlurFade>
       </main>
     </div>
