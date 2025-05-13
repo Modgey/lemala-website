@@ -8,6 +8,7 @@ import { Features } from "@/components/features-8"
 import { FeaturesComparison } from "@/components/features-comparison"
 import { LanguageSwitcher } from "@/src/components/language-switcher"
 import { DotPattern } from "@/components/ui/dot-pattern"
+import { FaqSection } from "@/components/FaqSection"
 
 export default function Home() {
   return (
@@ -216,6 +217,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </BlurFade>
+        
+        <BlurFade delay={0.85} duration={0.2}>
+          <FaqSection />
         </BlurFade>
       </main>
     </div>
