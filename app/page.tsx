@@ -95,7 +95,7 @@ export default function Home() {
         
         <div className="py-8 md:py-12"></div>
         
-        <div className="bg-gray-0 relative">
+        <div className="bg-gray-0 relative pb-12 md:pb-18">
           <BlurFade delay={0.55} duration={0.2}>
             <Logos3 
               heading="Dozens of Success Stories" 
@@ -172,29 +172,43 @@ export default function Home() {
                 </h2>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2">
                 {/* Step 1 */}
-                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
+                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white w-full md:w-1/3">
                   <div className="mb-4">
-                    <span className="inline-block bg-[var(--brand-color)] text-[var(--brand-color-text)] font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">1</span>
+                    <span className="inline-block bg-[var(--brand-color)] text-black font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">1</span>
                   </div>
                   <h3 className="text-xl font-medium mb-3">Discovery</h3>
                   <p className="text-gray-600">We learn about your business processes, pain points, and objectives to identify the perfect AI solution.</p>
                 </div>
                 
+                {/* Arrow 1 */}
+                <div className="flex justify-center items-center w-12 h-12 md:h-6 md:w-20">
+                  <svg className="w-10 h-10 md:w-12 md:h-6 text-[var(--brand-color)] rotate-90 md:rotate-0" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.2526 6.52555C23.5792 6.19894 23.5792 5.67383 23.2526 5.34721L18.3553 0.449959C18.0287 0.123347 17.5036 0.123347 17.177 0.449959C16.8504 0.776572 16.8504 1.30168 17.177 1.62829L21.485 5.93638L17.177 10.2445C16.8504 10.5711 16.8504 11.0962 17.177 11.4228C17.5036 11.7494 18.0287 11.7494 18.3553 11.4228L23.2526 6.52555ZM0.712646 6.7364H22.7171V5.1364H0.712646V6.7364Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                
                 {/* Step 2 */}
-                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
+                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white w-full md:w-1/3">
                   <div className="mb-4">
-                    <span className="inline-block bg-[var(--brand-color)] text-[var(--brand-color-text)] font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">2</span>
+                    <span className="inline-block bg-[var(--brand-color)] text-black font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">2</span>
                   </div>
                   <h3 className="text-xl font-medium mb-3">Development</h3>
                   <p className="text-gray-600">Our team builds and trains your custom AI solution to handle your specific tasks and workflows.</p>
                 </div>
                 
+                {/* Arrow 2 */}
+                <div className="flex justify-center items-center w-12 h-12 md:h-6 md:w-20">
+                  <svg className="w-10 h-10 md:w-12 md:h-6 text-[var(--brand-color)] rotate-90 md:rotate-0" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.2526 6.52555C23.5792 6.19894 23.5792 5.67383 23.2526 5.34721L18.3553 0.449959C18.0287 0.123347 17.5036 0.123347 17.177 0.449959C16.8504 0.776572 16.8504 1.30168 17.177 1.62829L21.485 5.93638L17.177 10.2445C16.8504 10.5711 16.8504 11.0962 17.177 11.4228C17.5036 11.7494 18.0287 11.7494 18.3553 11.4228L23.2526 6.52555ZM0.712646 6.7364H22.7171V5.1364H0.712646V6.7364Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                
                 {/* Step 3 */}
-                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
+                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white w-full md:w-1/3">
                   <div className="mb-4">
-                    <span className="inline-block bg-[var(--brand-color)] text-[var(--brand-color-text)] font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">3</span>
+                    <span className="inline-block bg-[var(--brand-color)] text-black font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">3</span>
                   </div>
                   <h3 className="text-xl font-medium mb-3">Integration</h3>
                   <p className="text-gray-600">We seamlessly integrate the AI solution into your existing systems and provide training for your team.</p>

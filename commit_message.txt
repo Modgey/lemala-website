@@ -1,0 +1,1 @@
+[Cursor] Add process arrows, update number visibility, and adjust spacing 
