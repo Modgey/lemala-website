@@ -144,6 +144,65 @@ export default function Home() {
         <BlurFade delay={0.65} duration={0.2}>
           <FeaturesComparison />
         </BlurFade>
+        
+        <BlurFade delay={0.75} duration={0.2}>
+          <div className="w-full bg-[var(--section-bg-light)] py-16 md:py-24 relative overflow-hidden">
+            <DotPattern
+              width={22}
+              height={22}
+              cx={1}
+              cy={1}
+              cr={1}
+              className="absolute inset-4 w-full h-full z-0"
+              style={{ fill: 'rgba(156, 163, 175, 0.5)' }}
+            />
+            <div className="container mx-auto px-6 relative z-10">
+              <div className="flex justify-center mb-6 relative">
+                <div className="px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full">
+                  <div className="flex items-center px-5 py-2 bg-[#f2f2f2] rounded-full">
+                    <span className="text-gray-600 text-sm font-medium">How We Work</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative mb-6 text-center">
+                <h2 className="text-3xl md:text-4xl md:font-normal mb-6 max-w-5xl mx-auto leading-tight">
+                  <span className="text-black font-medium">What to </span>
+                  <span className="text-[var(--brand-color-text)] italic font-bold">Expect</span>
+                </h2>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Step 1 */}
+                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
+                  <div className="mb-4">
+                    <span className="inline-block bg-[var(--brand-color)] text-[var(--brand-color-text)] font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">1</span>
+                  </div>
+                  <h3 className="text-xl font-medium mb-3">Discovery</h3>
+                  <p className="text-gray-600">We learn about your business processes, pain points, and objectives to identify the perfect AI solution.</p>
+                </div>
+                
+                {/* Step 2 */}
+                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
+                  <div className="mb-4">
+                    <span className="inline-block bg-[var(--brand-color)] text-[var(--brand-color-text)] font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">2</span>
+                  </div>
+                  <h3 className="text-xl font-medium mb-3">Development</h3>
+                  <p className="text-gray-600">Our team builds and trains your custom AI solution to handle your specific tasks and workflows.</p>
+                </div>
+                
+                {/* Step 3 */}
+                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white">
+                  <div className="mb-4">
+                    <span className="inline-block bg-[var(--brand-color)] text-[var(--brand-color-text)] font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">3</span>
+                  </div>
+                  <h3 className="text-xl font-medium mb-3">Integration</h3>
+                  <p className="text-gray-600">We seamlessly integrate the AI solution into your existing systems and provide training for your team.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </BlurFade>
       </main>
     </div>
   )

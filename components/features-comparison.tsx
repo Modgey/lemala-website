@@ -4,11 +4,20 @@ import { cn } from "@/lib/utils";
 
 export function FeaturesComparison() {
   return (
-    <section className="py-16 md:py-32">
+    <section className="py-8 md:py-12">
       <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
-        <div className="relative mb-12 text-center">
+        <div className="flex justify-center mb-6 relative">
+          <div className="px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full">
+            <div className="flex items-center px-5 py-2 bg-[#f2f2f2] rounded-full">
+              <span className="text-gray-600 text-sm font-medium">Why Choose Us</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="relative mb-6 text-center">
           <h2 className="text-3xl md:text-4xl md:font-normal mb-6 max-w-5xl mx-auto leading-tight">
-            <span className="text-[var(--brand-color-text)] italic font-bold">AI Solutions</span>
+            <span className="text-black font-medium">AI </span>
+            <span className="text-[var(--brand-color-text)] italic font-bold">Tailored</span>
             <span className="text-black font-medium"> for Your Business</span>
           </h2>
         </div>
