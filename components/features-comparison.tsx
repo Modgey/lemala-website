@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export function FeaturesComparison() {
   return (
-    <section className="py-6 md:py-9">
+    <section className="pt-0 pb-6 md:pb-9">
       <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
         <div className="flex justify-center mb-4 relative">
           <div className="px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full">

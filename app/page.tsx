@@ -1,13 +1,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { Logos3 } from "@/components/logos3"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { cn } from "@/lib/utils"
 import { FeaturesComparison } from "@/components/features-comparison"
 import { LanguageSwitcher } from "@/src/components/language-switcher"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { FaqSection } from "@/components/FaqSection"
+import { BrandScroller } from "@/components/ui/brand-scoller"
 
 export default function Home() {
   return (
@@ -93,53 +93,11 @@ export default function Home() {
           </section>
         </BlurFade>
         
-        <div className="py-8 md:py-12"></div>
+        <BlurFade delay={0.55} duration={0.2}>
+          <BrandScroller />
+        </BlurFade>
         
-        <div className="bg-gray-0 relative pb-12 md:pb-18">
-          <BlurFade delay={0.55} duration={0.2}>
-            <Logos3 
-              heading="Dozens of Success Stories" 
-              logos={[
-                {
-                  id: "autods-1",
-                  description: "AutoDS",
-                  image: "/testimonial logos/AutoDS.png",
-                  className: "h-12 w-auto opacity-80",
-                },
-                {
-                  id: "mayaparking-1",
-                  description: "Maya Parking",
-                  image: "/testimonial logos/Mayaparking.png",
-                  className: "h-12 w-auto opacity-80",
-                },
-                {
-                  id: "autods-2",
-                  description: "AutoDS",
-                  image: "/testimonial logos/AutoDS.png",
-                  className: "h-12 w-auto opacity-80",
-                },
-                {
-                  id: "mayaparking-2",
-                  description: "Maya Parking",
-                  image: "/testimonial logos/Mayaparking.png",
-                  className: "h-12 w-auto opacity-80",
-                },
-                {
-                  id: "autods-3",
-                  description: "AutoDS",
-                  image: "/testimonial logos/AutoDS.png",
-                  className: "h-12 w-auto opacity-80",
-                },
-                {
-                  id: "mayaparking-3",
-                  description: "Maya Parking",
-                  image: "/testimonial logos/Mayaparking.png",
-                  className: "h-12 w-auto opacity-80",
-                },
-              ]}
-            />
-          </BlurFade>
-        </div>
+        <div className="w-full h-0 bg-gradient-to-b from-gray-50/30 to-transparent"></div>
         
         <BlurFade delay={0.65} duration={0.2}>
           <FeaturesComparison />
