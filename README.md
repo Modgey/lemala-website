@@ -1,6 +1,6 @@
 # Lemala Agency Website
 
-A brief description of your project.
+A landing page for Lemala Agency, an AI automation agency.
 
 ## Getting Started
 
@@ -17,11 +17,11 @@ What things you need to install the software and how to install them:
 
 1.  Clone the repo
     ```sh
-    git clone https://github.com/your_username/your_project_name.git
+    git clone https://github.com/Modgey/lemala-website.git
     ```
 2.  Navigate to the project directory
     ```sh
-    cd your_project_name
+    cd lemala-website
     ```
 3.  Install NPM packages
     ```sh
@@ -51,13 +51,22 @@ In the project directory, you can run:
 
 ## Deployment
 
-This section should describe how to deploy the project. For Next.js projects, [Vercel](https://vercel.com/) is a common and recommended platform.
+This section should describe how to deploy the project. Currently, the project is hosted locally. For Next.js projects, [Vercel](https://vercel.com/) is a common and recommended platform for deployment.
 
 ## Built With
 
 *   [Next.js](https://nextjs.org/) - The React Framework
 *   [React](https://reactjs.org/) - A JavaScript library for building user interfaces
-*   (Add any other frameworks/libraries used, e.g., Tailwind CSS, TypeScript)
+*   [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript at Any Scale
+*   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+*   [Shadcn/UI](https://ui.shadcn.com/) - Re-usable components built using Radix UI and Tailwind CSS. (Includes various `@radix-ui/*` components, `lucide-react`, etc.)
+*   [Framer Motion](https://www.framer.com/motion/) - For animations
+*   [React Hook Form](https://react-hook-form.com/) - For form validation and management
+*   [Zod](https://zod.dev/) - TypeScript-first schema validation
+*   [Next-Themes](https://github.com/pacocoursey/next-themes) - For theme (dark/light mode) management in Next.js
+*   [Sonner](https://sonner.emilkowal.ski/) - An opinionated toast component for React.
+
+(You can add any other noteworthy libraries or tools here.)
 
 ## Contributing
 
