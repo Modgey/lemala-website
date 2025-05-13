@@ -176,6 +176,43 @@ export default function Home() {
           </div>
         </BlurFade>
         
+        {/* Book Call CTA Section */}
+        <BlurFade delay={0.8} duration={0.2}>
+          <section className="w-full bg-[var(--section-bg-light)] py-12 md:py-16 relative overflow-hidden">
+            <DotPattern
+              width={22}
+              height={22}
+              cx={1}
+              cy={1}
+              cr={1}
+              className="absolute inset-4 w-full h-full z-0"
+              style={{ fill: 'rgba(156, 163, 175, 0.5)' }}
+            />
+            <div className="container mx-auto px-6 relative z-10">
+              <div className="border border-gray-200/80 bg-gradient-to-b from-white to-gray-50/30 p-8 md:p-10 rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] backdrop-blur-sm overflow-hidden">
+                <div className="flex flex-col md:flex-row items-center">
+                  <div className="md:flex-1 mb-6 md:mb-0 md:pr-8">
+                    <div className="flex items-center mb-4">
+                      <div className="w-3 h-3 rounded-full bg-green-500 mr-2.5 pulse-dot"></div>
+                      <span className="text-gray-600 text-sm font-medium">Limited spots available</span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-medium mb-3">Book your Free AI discovery call now</h2>
+                    <p className="text-gray-600 max-w-2xl">Take the first step towards transforming your business with AI. Our experts will understand your needs and show you how we can help.</p>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <Link
+                      href="#demo"
+                      className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors"
+                    >
+                      BOOK CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </BlurFade>
+        
         <BlurFade delay={0.85} duration={0.2}>
           <FaqSection />
         </BlurFade>
