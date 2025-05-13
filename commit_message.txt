@@ -1,0 +1,1 @@
+[Cursor] Refactor feature cards with background images and hover effects 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { Rocket } from 'lucide-react';
 
 export function FeaturesComparison() {
   return (
@@ -23,109 +24,144 @@ export function FeaturesComparison() {
         </div>
         
         <div className="border border-gray-200/80 bg-gradient-to-b from-white to-gray-50/30 p-4 md:p-6 rounded-xl backdrop-blur-sm">
-          {/* Top row: 2 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {/* All cards in a 2x2 grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Voice Agent */}
-            <div className="border border-gray-200/90 rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] hover:translate-y-[-2px] bg-white">
-              <div className="mb-4">
-                <Badge className="bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-600 hover:from-emerald-100 hover:to-green-100 border-emerald-200 px-3 py-1.5 text-xs font-medium">AI Employee</Badge>
-              </div>
-              
-              <h2 className="text-2xl font-medium mb-3 text-gray-900">AI Voice Agent</h2>
-              
-              <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
-                Your personal service employee that speaks to your customers on the phone with a realistic voice.
-              </p>
-              
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start">
-                  <span className="text-emerald-500 mr-2 font-medium">✓</span>
-                  <span className="text-gray-700">24/7 Availability</span>
+            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[350px] flex flex-col bg-gray-800 bg-cover bg-center"> {/* BG placeholder */}
+              {/* Overlay for text readability */}
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
+              <div className="relative flex flex-col h-full p-8 text-white">
+                <div className="mb-4">
+                  <Badge className="bg-gradient-to-r from-emerald-50/80 to-green-50/80 text-emerald-700 hover:from-emerald-100/80 hover:to-green-100/80 border-emerald-300 px-3 py-1.5 text-xs font-medium backdrop-blur-sm">AI Employee</Badge>
                 </div>
-                <div className="flex items-start">
-                  <span className="text-emerald-500 mr-2 font-medium">✓</span>
-                  <span className="text-gray-700">Natural Voice</span>
+                <h2 className="text-2xl font-medium mb-3">AI Voice Agent</h2>
+                <p className="mb-6 text-[15px] leading-relaxed opacity-90">
+                  Your personal service employee that speaks to your customers on the phone with a realistic voice.
+                </p>
+                <div className="space-y-3 mb-8 opacity-90">
+                  <div className="flex items-start">
+                    <span className="text-emerald-400 mr-2 font-medium">✓</span>
+                    <span>24/7 Availability</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-emerald-400 mr-2 font-medium">✓</span>
+                    <span>Natural Voice</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-emerald-400 mr-2 font-medium">✓</span>
+                    <span>Appointment Booking</span>
+                  </div>
                 </div>
-                <div className="flex items-start">
-                  <span className="text-emerald-500 mr-2 font-medium">✓</span>
-                  <span className="text-gray-700">Appointment Booking</span>
+                <div className="mt-auto"> {/* Pushes "Get Started" to the bottom */}
+                  <p className="font-normal group-hover:font-bold text-lg group-hover:underline transition-all flex items-center">
+                    Get Started 
+                    <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </p>
                 </div>
               </div>
-              
-              <div className="text-center text-gray-400 text-sm h-[100px] flex items-center justify-center bg-gray-50/50 rounded-lg border border-gray-100">
-                Image placeholder
-              </div>
-            </div>
+            </a>
             
             {/* Chat Agent */}
-            <div className="border border-gray-200/90 rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] hover:translate-y-[-2px] bg-white">
-              <div className="mb-4">
-                <Badge className="bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-600 hover:from-emerald-100 hover:to-green-100 border-emerald-200 px-3 py-1.5 text-xs font-medium">AI Employee</Badge>
-              </div>
-              
-              <h2 className="text-2xl font-medium mb-3 text-gray-900">AI Chat Agent</h2>
-              
-              <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
-                Your support agent for chat support on SMS, WhatsApp, and web with instant assistance.
-              </p>
-              
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start">
-                  <span className="text-emerald-500 mr-2 font-medium">✓</span>
-                  <span className="text-gray-700">Multi-Channel</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-emerald-500 mr-2 font-medium">✓</span>
-                  <span className="text-gray-700">Instant Replies</span>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-emerald-500 mr-2 font-medium">✓</span>
-                  <span className="text-gray-700">24/7 Support</span>
-                </div>
-              </div>
-              
-              <div className="text-center text-gray-400 text-sm h-[100px] flex items-center justify-center bg-gray-50/50 rounded-lg border border-gray-100">
-                Image placeholder
-              </div>
-            </div>
-          </div>
-          
-          {/* Bottom row: 1 wider column with image on the right */}
-          <div className="border border-gray-200/90 rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] transition-all duration-300 hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] hover:translate-y-[-2px] bg-white">
-            <div className="flex flex-col md:flex-row">
-              <div className="md:w-2/3 pr-0 md:pr-8">
+            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[350px] flex flex-col bg-gray-800 bg-cover bg-center"> {/* BG placeholder */}
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
+              <div className="relative flex flex-col h-full p-8 text-white">
                 <div className="mb-4">
-                  <Badge className="bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-600 hover:from-blue-100 hover:to-indigo-100 border-blue-200 px-3 py-1.5 text-xs font-medium">Integration</Badge>
+                  <Badge className="bg-gradient-to-r from-emerald-50/80 to-green-50/80 text-emerald-700 hover:from-emerald-100/80 hover:to-green-100/80 border-emerald-300 px-3 py-1.5 text-xs font-medium backdrop-blur-sm">AI Employee</Badge>
                 </div>
-                
-                <h2 className="text-2xl font-medium mb-3 text-gray-900">AI Workflow Integration</h2>
-                
-                <p className="text-gray-600 mb-6 text-[15px] leading-relaxed">
+                <h2 className="text-2xl font-medium mb-3">AI Chat Agent</h2>
+                <p className="mb-6 text-[15px] leading-relaxed opacity-90">
+                  Your support agent for chat support on SMS, WhatsApp, and web with instant assistance.
+                </p>
+                <div className="space-y-3 mb-8 opacity-90">
+                  <div className="flex items-start">
+                    <span className="text-emerald-400 mr-2 font-medium">✓</span>
+                    <span>Multi-Channel</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-emerald-400 mr-2 font-medium">✓</span>
+                    <span>Instant Replies</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-emerald-400 mr-2 font-medium">✓</span>
+                    <span>24/7 Support</span>
+                  </div>
+                </div>
+                <div className="mt-auto">
+                  <p className="font-normal group-hover:font-bold text-lg group-hover:underline transition-all flex items-center">
+                    Get Started
+                    <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            {/* AI Workflow Integration */}
+            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[350px] flex flex-col bg-sky-800 bg-cover bg-center"> {/* BG placeholder - blueish */}
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
+              <div className="relative flex flex-col h-full p-8 text-white">
+                <div className="mb-4">
+                  <Badge className="bg-gradient-to-r from-blue-50/80 to-indigo-50/80 text-blue-700 hover:from-blue-100/80 hover:to-indigo-100/80 border-blue-300 px-3 py-1.5 text-xs font-medium backdrop-blur-sm">Integration</Badge>
+                </div>
+                <h2 className="text-2xl font-medium mb-3">AI Workflow Integration</h2>
+                <p className="mb-6 text-[15px] leading-relaxed opacity-90">
                   Integrate AI into your existing CRM and business workflows to automate tedious tasks.
                 </p>
-                
-                <div className="space-y-3">
+                <div className="space-y-3 mb-8 opacity-90">
                   <div className="flex items-start">
-                    <span className="text-blue-500 mr-2 font-medium">✓</span>
-                    <span className="text-gray-700">CRM Integration</span>
+                    <span className="text-blue-400 mr-2 font-medium">✓</span>
+                    <span>CRM Integration</span>
                   </div>
                   <div className="flex items-start">
-                    <span className="text-blue-500 mr-2 font-medium">✓</span>
-                    <span className="text-gray-700">Task Automation</span>
+                    <span className="text-blue-400 mr-2 font-medium">✓</span>
+                    <span>Task Automation</span>
                   </div>
                   <div className="flex items-start">
-                    <span className="text-blue-500 mr-2 font-medium">✓</span>
-                    <span className="text-gray-700">Enhanced Efficiency</span>
+                    <span className="text-blue-400 mr-2 font-medium">✓</span>
+                    <span>Enhanced Efficiency</span>
                   </div>
                 </div>
-              </div>
-              
-              <div className="md:w-1/3 mt-6 md:mt-0 flex items-center justify-center">
-                <div className="text-center text-gray-400 text-sm h-[140px] w-full flex items-center justify-center bg-gray-50/50 rounded-lg border border-gray-100">
-                  Image placeholder
+                <div className="mt-auto">
+                  <p className="font-normal group-hover:font-bold text-lg group-hover:underline transition-all flex items-center">
+                    Get Started
+                    <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </p>
                 </div>
               </div>
-            </div>
+            </a>
+
+            {/* Support & Maintenance Plan */}
+            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[350px] flex flex-col bg-purple-800 bg-cover bg-center"> {/* BG placeholder - purplish */}
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
+              <div className="relative flex flex-col h-full p-8 text-white">
+                <div className="mb-4">
+                  <Badge className="bg-gradient-to-r from-purple-50/80 to-violet-50/80 text-purple-700 hover:from-purple-100/80 hover:to-violet-100/80 border-purple-300 px-3 py-1.5 text-xs font-medium backdrop-blur-sm">Optional</Badge>
+                </div>
+                <h2 className="text-2xl font-medium mb-3">Support & Maintenance</h2>
+                <p className="mb-6 text-[15px] leading-relaxed opacity-90">
+                  Ensure your AI agents run smoothly with regular updates, performance upgrades, and bug fixes.
+                </p>
+                <div className="space-y-3 mb-8 opacity-90">
+                  <div className="flex items-start">
+                    <span className="text-purple-400 mr-2 font-medium">✓</span>
+                    <span>Latest AI Upgrades</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-purple-400 mr-2 font-medium">✓</span>
+                    <span>24/7 Monitoring</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-purple-400 mr-2 font-medium">✓</span>
+                    <span>Custom Dashboard</span>
+                  </div>
+                </div>
+                <div className="mt-auto">
+                  <p className="font-normal group-hover:font-bold text-lg group-hover:underline transition-all flex items-center">
+                    Get Started
+                    <Rocket className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
