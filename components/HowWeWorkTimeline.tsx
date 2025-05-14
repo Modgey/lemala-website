@@ -55,6 +55,7 @@ const timelineSteps = [
 
 export function HowWeWorkTimeline() {
   const [activeStep, setActiveStep] = useState(0);
+  const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
   const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
   const timelineContainerRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -75,21 +76,28 @@ export function HowWeWorkTimeline() {
   }, [hasScrolled]);
 
   useEffect(() => {
-    // Calculate the distance between the first and last timeline points
-    if (timelineRefs.current[0] && timelineRefs.current[timelineSteps.length - 1]) {
-      const first = timelineRefs.current[0];
-      const last = timelineRefs.current[timelineSteps.length - 1];
-      if (first && last) {
-        const firstRect = first.getBoundingClientRect();
-        const lastRect = last.getBoundingClientRect();
-        // The center of the circles is 24px from the top of each item
-        const offset = 24;
-        const containerScrollY = window.scrollY + (timelineContainerRef.current?.getBoundingClientRect().top || 0);
-        const y1 = firstRect.top - containerScrollY + offset;
-        const y2 = lastRect.top - containerScrollY + offset;
-        setLineHeight(y2 - y1);
+    // Helper to recalculate the timeline line height
+    const recalcLineHeight = () => {
+      if (timelineRefs.current[0] && timelineRefs.current[timelineSteps.length - 1]) {
+        const first = timelineRefs.current[0];
+        const last = timelineRefs.current[timelineSteps.length - 1];
+        if (first && last) {
+          const firstRect = first.getBoundingClientRect();
+          const lastRect = last.getBoundingClientRect();
+          // The center of the circles is 24px from the top of each item
+          const offset = 24;
+          // Use pageYOffset for scroll position
+          const containerScrollY = window.scrollY + (timelineContainerRef.current?.getBoundingClientRect().top || 0);
+          const y1 = firstRect.top - containerScrollY + offset;
+          const y2 = lastRect.top - containerScrollY + offset;
+          // Add a small buffer to ensure the line reaches the last circle (especially on mobile)
+          setLineHeight(y2 - y1 + 1);
+        }
       }
-    }
+    };
+    recalcLineHeight();
+    window.addEventListener('resize', recalcLineHeight);
+    return () => window.removeEventListener('resize', recalcLineHeight);
   }, [hasScrolled, activeStep]);
 
   useEffect(() => {
@@ -124,6 +132,11 @@ export function HowWeWorkTimeline() {
     timelineRefs.current[index] = el;
   };
 
+  // Toggle FAQ accordion item
+  const toggleQuestion = (index: number) => {
+    setActiveQuestion(activeQuestion === index ? null : index);
+  };
+
   return (
     <section className="w-full bg-[var(--section-bg-light)] py-16 md:py-24 relative overflow-hidden" id="how-we-work">
       <DotPattern
@@ -136,8 +149,9 @@ export function HowWeWorkTimeline() {
         style={{ fill: 'rgba(156, 163, 175, 0.5)' }}
       />
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {/* Left Column - Title and CTA */}
+        {/* Responsive flex: column on mobile, row on md+ */}
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12">
+          {/* Left Column - Header + CTA only (no Questions on mobile) */}
           <div className="flex flex-col">
             <div className="mb-6">
               <div className="inline-block px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full mb-4">
@@ -145,11 +159,9 @@ export function HowWeWorkTimeline() {
                   <span className="text-gray-600 text-sm font-medium">How we work</span>
                 </div>
               </div>
-              
               <h2 className="text-4xl md:text-5xl font-medium mb-6 leading-tight">
                 Get your tailored AI solution<br />in just 2 weeks
               </h2>
-              
               <Link
                 href="#demo"
                 className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors mb-12"
@@ -157,33 +169,37 @@ export function HowWeWorkTimeline() {
                 Book A Call <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
               </Link>
             </div>
-            
-            {/* Questions Section */}
-            <div className="mt-auto">
+            {/* Questions Section (desktop only) */}
+            <div className="mt-auto hidden md:block">
               <h3 className="text-2xl md:text-3xl font-medium mb-6">Questions</h3>
               <div className="space-y-3">
                 {limitedFaqData.map((item, index) => (
                   <div key={index} className="bg-white border border-gray-200/90 rounded-lg shadow-[0_2px_10px_0_rgba(0,0,0,0.03)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
-                    <details className="group">
-                      <summary className="flex items-center justify-between w-full p-4 text-left text-gray-900 font-medium cursor-pointer">
+                    <div className="group">
+                      <button
+                        onClick={() => toggleQuestion(index)}
+                        className="flex items-center justify-between w-full p-4 text-left text-gray-900 font-medium cursor-pointer"
+                        aria-expanded={activeQuestion === index}
+                      >
                         <span className="flex-1 pr-2 text-sm md:text-base">{item.question}</span>
-                        <span className="flex-shrink-0 transition-transform duration-200 group-open:rotate-45">
+                        <span className={`flex-shrink-0 transition-transform duration-200 ${activeQuestion === index ? 'rotate-45' : ''}`}>
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 3.33337V12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                             <path d="M3.33301 8H12.6663" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
-                      </summary>
-                      <div className="p-4 pt-2 text-gray-600 text-xs md:text-sm">
-                        {item.answer}
-                      </div>
-                    </details>
+                      </button>
+                      {activeQuestion === index && (
+                        <div className="p-4 pt-2 text-gray-600 text-xs md:text-sm">
+                          {item.answer}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
-          
           {/* Right Column - Vertical Timeline */}
           <div className="relative" ref={timelineContainerRef}>
             {/* This is the background line (gray) */}
@@ -191,7 +207,6 @@ export function HowWeWorkTimeline() {
               className="absolute left-[22px] top-6 w-1 bg-gray-200 z-0 rounded-full"
               style={{ height: lineHeight ? `${lineHeight}px` : undefined }}
             ></div>
-            
             {/* This is the progress line that fills as you scroll (accent color) */}
             <div
               className="absolute left-[22px] top-6 w-1 bg-[var(--brand-color)] z-1 rounded-full transition-all duration-700 ease-in-out"
@@ -201,11 +216,9 @@ export function HowWeWorkTimeline() {
                   : '0%'
               }}
             ></div>
-            
             <div className="space-y-16">
               {timelineSteps.map((step, index) => {
                 const isActive = activeStep >= step.number;
-                
                 return (
                   <div 
                     key={index} 
@@ -223,7 +236,6 @@ export function HowWeWorkTimeline() {
                         {step.number}
                       </span>
                     </div>
-                    
                     {/* Content card */}
                     <div className="ml-16">
                       <div 
@@ -244,6 +256,36 @@ export function HowWeWorkTimeline() {
                   </div>
                 );
               })}
+            </div>
+            {/* Questions Section (mobile only) */}
+            <div className="block md:hidden mt-12">
+              <h3 className="text-2xl font-medium mb-6">Questions</h3>
+              <div className="space-y-3">
+                {limitedFaqData.map((item, index) => (
+                  <div key={index} className="bg-white border border-gray-200/90 rounded-lg shadow-[0_2px_10px_0_rgba(0,0,0,0.03)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+                    <div className="group">
+                      <button
+                        onClick={() => toggleQuestion(index)}
+                        className="flex items-center justify-between w-full p-4 text-left text-gray-900 font-medium cursor-pointer"
+                        aria-expanded={activeQuestion === index}
+                      >
+                        <span className="flex-1 pr-2 text-sm md:text-base">{item.question}</span>
+                        <span className={`flex-shrink-0 transition-transform duration-200 ${activeQuestion === index ? 'rotate-45' : ''}`}>
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 3.33337V12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M3.33301 8H12.6663" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                      </button>
+                      {activeQuestion === index && (
+                        <div className="p-4 pt-2 text-gray-600 text-xs md:text-sm">
+                          {item.answer}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
