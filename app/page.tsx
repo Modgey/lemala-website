@@ -49,7 +49,7 @@ export default function Home() {
               href="#contact"
               className="bg-[var(--brand-color)] text-black px-6 md:px-12 py-6 md:py-8 flex items-center hover:bg-[var(--brand-color-hover)] transition-colors text-xl md:text-2xl"
             >
-              LET'S TALK <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
+              BOOK A CALL <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
             </Link>
           </div>
         </header>
@@ -178,7 +178,7 @@ export default function Home() {
         
         {/* Book Call CTA Section */}
         <BlurFade delay={0.8} duration={0.2}>
-          <section className="w-full bg-[var(--section-bg-light)] py-0 pt-0 pb-10 md:pb-16 relative overflow-hidden -mt-6 md:-mt-8">
+          <section className="w-full bg-[var(--section-bg-light)] py-0 pt-0 pb-10 md:pb-16 relative overflow-hidden -mt-6 md:-mt-10">
             <DotPattern
               width={22}
               height={22}
@@ -203,7 +203,7 @@ export default function Home() {
                       href="#demo"
                       className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors"
                     >
-                      BOOK CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
+                      BOOK A CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
                     </Link>
                   </div>
                 </div>
