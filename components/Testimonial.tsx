@@ -6,7 +6,7 @@ const Testimonial = () => {
       <div className="container mx-auto px-6 md:px-4 text-center">
         <blockquote className="max-w-3xl mx-auto">
           <p className="text-xl md:text-2xl lg:text-3xl text-gray-800 leading-relaxed mb-8">
-            "Ben and the team have been outstanding at designing customized AI agents to solve complex problems of our team. The quality of their output is impressive, and they have been diligent at incorporating specific feedback."
+            "The Lemala team have been outstanding at designing customized AI agents to solve complex problems of our team. The quality of their output is impressive, and they have been diligent at incorporating specific feedback."
           </p>
           <div className="flex items-center justify-center">
             <div className="flex-shrink-0 mr-4">

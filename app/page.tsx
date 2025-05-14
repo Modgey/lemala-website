@@ -51,7 +51,7 @@ export default function Home() {
               href="#book-call"
               className="bg-[var(--brand-color)] text-black px-6 md:px-12 py-6 md:py-8 flex items-center hover:bg-[var(--brand-color-hover)] transition-colors text-xl md:text-2xl"
             >
-              LET\'S TALK <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
+              LET'S TALK <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
             </Link>
           </div>
         </header>
