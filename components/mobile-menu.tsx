@@ -27,11 +27,11 @@ export default function MobileMenu() {
 
           <nav className="flex flex-col items-center justify-center flex-grow space-y-8 text-xl">
             <Link
-              href="#offer"
+              href="#solutions"
               className="text-black font-medium hover:text-gray-700 transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              OUR OFFER
+              SOLUTIONS
             </Link>
             <Link
               href="#testimonials"

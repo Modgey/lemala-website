@@ -17,7 +17,7 @@ export const BrandScroller = () => {
       <div className="relative w-full">
         <div className="absolute -top-4 left-0 right-0 bg-gradient-to-b from-gray-100 via-gray-100 to-gray-50/20 w-full h-[200%]"></div>
         
-        <div className="relative flex overflow-x-hidden [--gap:2rem] [--duration:40s] z-10">
+        <div className="relative flex overflow-x-hidden [--gap:2rem] [--duration:60s] z-10">
           <div className="animate-marquee flex shrink-0 items-center [gap:var(--gap)] py-4">
             {[...Array(8)].map((_, i) => (
               logos.map((logo, index) => (
@@ -61,7 +61,7 @@ export const BrandScrollerReverse = () => {
   ];
 
   return (
-    <div className="relative flex overflow-x-hidden [--gap:2rem] [--duration:40s]">
+    <div className="relative flex overflow-x-hidden [--gap:2rem] [--duration:60s]">
       <div className="animate-marquee-reverse flex shrink-0 items-center [gap:var(--gap)] py-4">
         {[...Array(8)].map((_, i) => (
           logos.map((logo, index) => (

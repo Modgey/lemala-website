@@ -32,8 +32,8 @@ export default function Home() {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8 ml-8">
-            <Link href="#offer" className="text-black text-sm font-medium hover:text-gray-700 transition-colors">
-              OUR OFFER
+            <Link href="#solutions" className="text-black text-sm font-medium hover:text-gray-700 transition-colors">
+              SOLUTIONS
             </Link>
             <Link href="#testimonials" className="text-black text-sm font-medium hover:text-gray-700 transition-colors">
               TESTIMONIALS
