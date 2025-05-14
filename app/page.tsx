@@ -49,7 +49,7 @@ export default function Home() {
               href="#contact"
               className="bg-[var(--brand-color)] text-black px-6 md:px-12 py-6 md:py-8 flex items-center hover:bg-[var(--brand-color-hover)] transition-colors text-xl md:text-2xl"
             >
-              BOOK A CALL <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
+              LET'S TALK <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
             </Link>
           </div>
         </header>
@@ -87,7 +87,7 @@ export default function Home() {
                 href="#demo"
                 className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors relative"
               >
-                BOOK DEMO CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
+                BOOK A CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
               </Link>
             </BlurFade>
           </section>
