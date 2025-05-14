@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { FeaturesComparison } from "@/components/features-comparison"
 import { LanguageSwitcher } from "@/src/components/language-switcher"
 import { DotPattern } from "@/components/ui/dot-pattern"
-import { FaqSection } from "@/components/FaqSection"
+import { HowWeWorkTimeline } from "@/components/HowWeWorkTimeline"
 import { BrandScroller } from "@/components/ui/brand-scoller"
 
 export default function Home() {
@@ -104,116 +104,7 @@ export default function Home() {
         </BlurFade>
         
         <BlurFade delay={0.75} duration={0.2}>
-          <div className="w-full bg-[var(--section-bg-light)] py-16 md:py-24 relative overflow-hidden">
-            <DotPattern
-              width={22}
-              height={22}
-              cx={1}
-              cy={1}
-              cr={1}
-              className="absolute inset-4 w-full h-full z-0"
-              style={{ fill: 'rgba(156, 163, 175, 0.5)' }}
-            />
-            <div className="container mx-auto px-6 relative z-10">
-              <div className="flex justify-center mb-6 relative">
-                <div className="px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full">
-                  <div className="flex items-center px-5 py-2 bg-[#f2f2f2] rounded-full">
-                    <span className="text-gray-600 text-sm font-medium">How We Work</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="relative mb-6 text-center">
-                <h2 className="text-3xl md:text-4xl md:font-normal mb-6 max-w-5xl mx-auto leading-tight">
-                  <span className="text-black font-medium">What to </span>
-                  <span className="text-[var(--brand-color-text)] italic font-bold">Expect</span>
-                </h2>
-              </div>
-              
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2">
-                {/* Step 1 */}
-                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white w-full md:w-1/3">
-                  <div className="mb-4">
-                    <span className="inline-block bg-[var(--brand-color)] text-black font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">1</span>
-                  </div>
-                  <h3 className="text-xl font-medium mb-3">Discovery</h3>
-                  <p className="text-gray-600">We learn about your business processes, pain points, and objectives to identify the perfect AI solution.</p>
-                </div>
-                
-                {/* Arrow 1 */}
-                <div className="flex justify-center items-center w-12 h-12 md:h-6 md:w-20">
-                  <svg className="w-10 h-10 md:w-12 md:h-6 text-[var(--brand-color)] rotate-90 md:rotate-0" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.2526 6.52555C23.5792 6.19894 23.5792 5.67383 23.2526 5.34721L18.3553 0.449959C18.0287 0.123347 17.5036 0.123347 17.177 0.449959C16.8504 0.776572 16.8504 1.30168 17.177 1.62829L21.485 5.93638L17.177 10.2445C16.8504 10.5711 16.8504 11.0962 17.177 11.4228C17.5036 11.7494 18.0287 11.7494 18.3553 11.4228L23.2526 6.52555ZM0.712646 6.7364H22.7171V5.1364H0.712646V6.7364Z" fill="currentColor"/>
-                  </svg>
-                </div>
-                
-                {/* Step 2 */}
-                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white w-full md:w-1/3">
-                  <div className="mb-4">
-                    <span className="inline-block bg-[var(--brand-color)] text-black font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">2</span>
-                  </div>
-                  <h3 className="text-xl font-medium mb-3">Development</h3>
-                  <p className="text-gray-600">Our team builds and trains your custom AI solution to handle your specific tasks and workflows.</p>
-                </div>
-                
-                {/* Arrow 2 */}
-                <div className="flex justify-center items-center w-12 h-12 md:h-6 md:w-20">
-                  <svg className="w-10 h-10 md:w-12 md:h-6 text-[var(--brand-color)] rotate-90 md:rotate-0" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.2526 6.52555C23.5792 6.19894 23.5792 5.67383 23.2526 5.34721L18.3553 0.449959C18.0287 0.123347 17.5036 0.123347 17.177 0.449959C16.8504 0.776572 16.8504 1.30168 17.177 1.62829L21.485 5.93638L17.177 10.2445C16.8504 10.5711 16.8504 11.0962 17.177 11.4228C17.5036 11.7494 18.0287 11.7494 18.3553 11.4228L23.2526 6.52555ZM0.712646 6.7364H22.7171V5.1364H0.712646V6.7364Z" fill="currentColor"/>
-                  </svg>
-                </div>
-                
-                {/* Step 3 */}
-                <div className="border rounded-lg p-8 shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] bg-white w-full md:w-1/3">
-                  <div className="mb-4">
-                    <span className="inline-block bg-[var(--brand-color)] text-black font-medium rounded-full w-12 h-12 flex items-center justify-center text-xl">3</span>
-                  </div>
-                  <h3 className="text-xl font-medium mb-3">Integration</h3>
-                  <p className="text-gray-600">We seamlessly integrate the AI solution into your existing systems and provide training for your team.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </BlurFade>
-        
-        {/* Book Call CTA Section */}
-        <BlurFade delay={0.8} duration={0.2}>
-          <section className="w-full bg-[var(--section-bg-light)] py-0 pt-0 pb-10 md:pb-16 relative overflow-hidden -mt-6 md:-mt-10">
-            <DotPattern
-              width={22}
-              height={22}
-              cx={1}
-              cy={1}
-              cr={1}
-              className="absolute inset-4 w-full h-full z-0"
-              style={{ fill: 'rgba(156, 163, 175, 0.5)' }}
-            />
-            <div className="container mx-auto px-6 relative z-10">
-              <div className="border border-gray-200/80 bg-gradient-to-b from-white to-gray-50/30 p-8 md:p-10 rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] backdrop-blur-sm overflow-hidden">
-                <div className="flex flex-col md:flex-row items-center">
-                  <div className="md:flex-1 mb-6 md:mb-0 md:pr-8">
-                    <div className="flex items-center mb-4">
-                      <div className="w-3 h-3 rounded-full bg-green-500 mr-2.5 pulse-dot"></div>
-                      <span className="text-gray-600 text-sm font-medium">Taking new clients</span>
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-medium mb-3">Book your Free discovery call now</h2>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <Link
-                      href="#demo"
-                      className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors"
-                    >
-                      BOOK A CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </BlurFade>
-        
-        <BlurFade delay={0.85} duration={0.2}>
-          <FaqSection />
+          <HowWeWorkTimeline />
         </BlurFade>
       </main>
     </div>

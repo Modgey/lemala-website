@@ -1,1 +1,8 @@
-[Cursor] Refactor feature cards with background images and hover effects 
+[Cursor] feat: implement interactive how-we-work timeline
+
+- Add vertical timeline with 4 key steps
+- Implement scroll-based animations
+- Add progress line that fills up on scroll
+- Fix line height to stop at last point
+- Add FAQ section with collapsible questions
+- Improve responsive layout and styling 

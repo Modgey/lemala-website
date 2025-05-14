@@ -124,7 +124,7 @@ export function FeaturesComparison() {
               <div className="relative flex flex-col h-full p-5 text-white">
                 <h2 className="text-xl font-medium mb-2">Support & Maintenance</h2>
                 <p className="mb-3 text-sm leading-tight opacity-90">
-                  Ensure your AI agents run smoothly with regular updates, performance upgrades, and bug fixes.
+                  Ensure your AI systems run smoothly with regular updates, performance upgrades, and bug fixes.
                 </p>
                 <div className="space-y-1 mb-3 opacity-90 text-sm">
                   <div className="flex items-start">
