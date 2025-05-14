@@ -178,7 +178,7 @@ export default function Home() {
         
         {/* Book Call CTA Section */}
         <BlurFade delay={0.8} duration={0.2}>
-          <section className="w-full bg-[var(--section-bg-light)] py-12 md:py-16 relative overflow-hidden">
+          <section className="w-full bg-[var(--section-bg-light)] py-0 pt-0 pb-10 md:pb-16 relative overflow-hidden -mt-6 md:-mt-8">
             <DotPattern
               width={22}
               height={22}
@@ -194,10 +194,9 @@ export default function Home() {
                   <div className="md:flex-1 mb-6 md:mb-0 md:pr-8">
                     <div className="flex items-center mb-4">
                       <div className="w-3 h-3 rounded-full bg-green-500 mr-2.5 pulse-dot"></div>
-                      <span className="text-gray-600 text-sm font-medium">Limited spots available</span>
+                      <span className="text-gray-600 text-sm font-medium">Taking new clients</span>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-medium mb-3">Book your Free AI discovery call now</h2>
-                    <p className="text-gray-600 max-w-2xl">Take the first step towards transforming your business with AI. Our experts will understand your needs and show you how we can help.</p>
+                    <h2 className="text-2xl md:text-3xl font-medium mb-3">Book your Free discovery call now</h2>
                   </div>
                   <div className="flex-shrink-0">
                     <Link
