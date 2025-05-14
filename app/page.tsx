@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { FeaturesComparison } from "@/components/features-comparison"
 import { LanguageSwitcher } from "@/src/components/language-switcher"
 import { DotPattern } from "@/components/ui/dot-pattern"
-import { HowWeWorkTimeline } from "@/components/HowWeWorkTimeline"
+import { TimelineWrapper } from "@/components/TimelineWrapper"
 import { BrandScroller } from "@/components/ui/brand-scoller"
 
 export default function Home() {
@@ -104,7 +104,7 @@ export default function Home() {
         </BlurFade>
         
         <BlurFade delay={0.75} duration={0.2}>
-          <HowWeWorkTimeline />
+          <TimelineWrapper />
         </BlurFade>
       </main>
     </div>
