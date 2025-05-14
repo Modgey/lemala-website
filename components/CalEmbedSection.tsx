@@ -32,7 +32,7 @@ const CalEmbedSection = () => {
 
         {/* Cal.com inline embed container */}
         <div className="max-w-4xl mx-auto bg-white p-1 md:p-4 rounded-lg shadow-xl h-[550px] border border-black-400">
-          <div style={{ width: "100%", height: "100%", overflow: "hidden" }} id="my-cal-inline-embed"></div>
+          <div style={{ width: "100%", height: "100%", overflow: "scroll" }} id="my-cal-inline-embed"></div>
         </div>
       </div>
 
