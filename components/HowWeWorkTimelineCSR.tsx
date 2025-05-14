@@ -167,10 +167,10 @@ export function HowWeWorkTimelineCSR() {
                 </div>
               </div>
               <h2 className="text-4xl md:text-5xl font-medium mb-6 leading-tight">
-                Get your tailored AI solution<br />in just 2 weeks
+                Get your <span className="text-[var(--brand-color-text)] italic font-bold">Custom</span> AI solution<br />in just 2 weeks
               </h2>
               <Link
-                href="#demo"
+                href="#book-call"
                 className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors mb-12"
               >
                 Book A Call <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />

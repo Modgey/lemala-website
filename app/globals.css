@@ -31,7 +31,7 @@
     --brand-color-text: #1abaff;
     
     /* Section backgrounds */
-    --section-bg-light: #f5f5f5;
+    --section-bg-light: #ebebeb;
   }
 
   .dark {
@@ -78,6 +78,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  -ms-overflow-style: none;
 }
 
 html {
@@ -95,19 +96,4 @@ body {
   -ms-overflow-style: none;
 }
 
-.pulse-dot {
-  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
-  }
-}
+/* The pulse-dot animation has been removed as it's no longer needed */

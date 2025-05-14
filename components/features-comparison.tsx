@@ -25,7 +25,7 @@ export function FeaturesComparison() {
           {/* All cards in a 2x2 grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Voice Agent */}
-            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-gray-800 bg-cover bg-center"> {/* Reduced min-height */}
+            <a href="#book-call" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-gray-800 bg-cover bg-center"> {/* Reduced min-height */}
               {/* Overlay for text readability */}
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
               <div className="relative flex flex-col h-full p-5 text-white">
@@ -57,7 +57,7 @@ export function FeaturesComparison() {
             </a>
             
             {/* Chat Agent */}
-            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-gray-800 bg-cover bg-center"> {/* Reduced min-height */}
+            <a href="#book-call" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-gray-800 bg-cover bg-center"> {/* Reduced min-height */}
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
               <div className="relative flex flex-col h-full p-5 text-white">
                 <h2 className="text-xl font-medium mb-2">AI Chat Agent</h2>
@@ -88,7 +88,7 @@ export function FeaturesComparison() {
             </a>
 
             {/* AI Workflow Integration */}
-            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-sky-800 bg-cover bg-center"> {/* Reduced min-height */}
+            <a href="#book-call" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-sky-800 bg-cover bg-center"> {/* Reduced min-height */}
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
               <div className="relative flex flex-col h-full p-5 text-white">
                 <h2 className="text-xl font-medium mb-2">AI Workflow Integration</h2>
@@ -119,7 +119,7 @@ export function FeaturesComparison() {
             </a>
 
             {/* Support & Maintenance Plan */}
-            <a href="#contact" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-purple-800 bg-cover bg-center"> {/* Reduced min-height */}
+            <a href="#book-call" className="group block rounded-lg shadow-[0_4px_14px_0_rgba(0,0,0,0.05)] hover:shadow-[0_8px_25px_rgba(0,0,0,0.09)] transition-all duration-300 overflow-hidden relative min-h-[260px] flex flex-col bg-purple-800 bg-cover bg-center"> {/* Reduced min-height */}
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
               <div className="relative flex flex-col h-full p-5 text-white">
                 <h2 className="text-xl font-medium mb-2">Support & Maintenance</h2>

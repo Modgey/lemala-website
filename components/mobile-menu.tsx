@@ -48,11 +48,11 @@ export default function MobileMenu() {
               FAQ
             </Link>
             <Link
-              href="#contact"
+              href="#book-call"
               className="bg-[#c29bef] text-black px-7 py-4 flex items-center hover:bg-[#b78ae8] transition-colors text-2xl rounded-bl-3xl"
               onClick={() => setIsOpen(false)}
             >
-              LET'S TALK
+              LET\'S TALK
             </Link>
           </nav>
         </div>

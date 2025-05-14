@@ -33,23 +33,23 @@ const limitedFaqData = [
 const timelineSteps = [
   {
     number: 1,
-    title: "Discovery",
-    description: "We learn about your business processes, pain points, and objectives to identify the perfect AI solution."
+    title: "Day 1: Discovery Call",
+    description: "We deep dive into your business goals, brand identity, and specific needs to understand exactly what AI solution will drive the most value for you."
   },
   {
     number: 2,
-    title: "Tailored Solution",
-    description: "Our team designs and validates a custom AI solution concept to handle your specific tasks and workflows."
+    title: "Week 1: Development & Testing",
+    description: "Our team builds and refines your custom AI solution, training it with your data and testing it against your real-world scenarios to ensure optimal performance."
   },
   {
     number: 3,
-    title: "Development",
-    description: "We build and train your AI solution with your data, ensuring it's optimized for your unique needs."
+    title: "Week 2: Solution Delivery",
+    description: "We deliver your fully-functioning AI solution, integrate it with your existing systems, and provide comprehensive training for your team to hit the ground running."
   },
   {
     number: 4,
-    title: "Integration",
-    description: "We seamlessly integrate the AI solution into your existing systems and provide training for your team."
+    title: "Ongoing: Results & Growth",
+    description: "Experience immediate results while we provide continuous improvements, performance monitoring, and updates to ensure your AI solution evolves with your business."
   }
 ];
 
@@ -60,8 +60,16 @@ export function HowWeWorkTimeline() {
   const timelineContainerRef = useRef<HTMLDivElement | null>(null);
   const [hasScrolled, setHasScrolled] = useState(false);
   const [lineHeight, setLineHeight] = useState<number | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Mark as client-side rendered after mount
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
     // Manual scroll tracking for first activation
     const handleScroll = () => {
       if (!hasScrolled && timelineContainerRef.current) {
@@ -73,9 +81,11 @@ export function HowWeWorkTimeline() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasScrolled]);
+  }, [hasScrolled, isClient]);
 
   useEffect(() => {
+    if (!isClient) return;
+    
     // Helper to recalculate the timeline line height
     const recalcLineHeight = () => {
       if (timelineRefs.current[0] && timelineRefs.current[timelineSteps.length - 1]) {
@@ -98,9 +108,11 @@ export function HowWeWorkTimeline() {
     recalcLineHeight();
     window.addEventListener('resize', recalcLineHeight);
     return () => window.removeEventListener('resize', recalcLineHeight);
-  }, [hasScrolled, activeStep]);
+  }, [hasScrolled, activeStep, isClient]);
 
   useEffect(() => {
+    if (!isClient) return;
+    
     const options = {
       root: null,
       rootMargin: '-20% 0px -10% 0px',
@@ -126,15 +138,71 @@ export function HowWeWorkTimeline() {
         if (ref) observer.unobserve(ref);
       });
     };
-  }, []);
+  }, [isClient]);
 
   const assignRef = (index: number) => (el: HTMLDivElement | null) => {
-    timelineRefs.current[index] = el;
+    if (isClient) {
+      timelineRefs.current[index] = el;
+    }
   };
 
   // Toggle FAQ accordion item
   const toggleQuestion = (index: number) => {
     setActiveQuestion(activeQuestion === index ? null : index);
+  };
+
+  // Instead of conditionally rendering different components,
+  // use consistent HTML structure with conditional CSS classes
+  const renderTimelineItem = (step: typeof timelineSteps[0], index: number, showContent: boolean) => {
+    const isActive = activeStep >= step.number;
+    
+    return (
+      <div 
+        key={index} 
+        className="relative min-h-[120px]" 
+        ref={assignRef(index)}
+      >
+        {/* Circle with number */}
+        <div 
+          className={`absolute left-[22px] w-10 h-10 -translate-x-1/2 flex items-center justify-center rounded-full z-10 ${
+            showContent && isActive 
+              ? 'bg-[var(--brand-color)]' 
+              : 'bg-white border-2 border-gray-200'
+          }`}
+          style={{ top: '24px' }}
+        >
+          <span className={`text-sm font-medium ${showContent && isActive ? 'text-black' : 'text-gray-400'}`}>
+            {step.number}
+          </span>
+        </div>
+        {/* Content card */}
+        <div className="ml-16">
+          <div 
+            className={`p-5 rounded-lg ${
+              showContent && isActive 
+                ? 'bg-white border border-[var(--brand-color)] shadow-[0_4px_20px_rgba(0,0,0,0.08)]' 
+                : 'bg-white/80 border border-gray-200/90 shadow-[0_2px_10px_0_rgba(0,0,0,0.03)]'
+            }`}
+          >
+            {showContent ? (
+              <>
+                <h3 className={`text-xl font-medium mb-2 ${isActive ? 'text-black' : 'text-gray-500'}`}>
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {step.description}
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="h-6 w-24 bg-gray-200 rounded mb-2"></div>
+                <div className="h-4 w-full bg-gray-100 rounded"></div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -217,45 +285,7 @@ export function HowWeWorkTimeline() {
               }}
             ></div>
             <div className="space-y-16">
-              {timelineSteps.map((step, index) => {
-                const isActive = activeStep >= step.number;
-                return (
-                  <div 
-                    key={index} 
-                    className="relative min-h-[120px]" 
-                    ref={assignRef(index)}
-                  >
-                    {/* Circle with number */}
-                    <div 
-                      className={`absolute left-[22px] w-10 h-10 -translate-x-1/2 flex items-center justify-center rounded-full z-10 transition-all duration-500 ease-in-out ${
-                        isActive ? 'bg-[var(--brand-color)]' : 'bg-white border-2 border-gray-200'
-                      }`}
-                      style={{ top: '24px' }}
-                    >
-                      <span className={`text-sm font-medium ${isActive ? 'text-black' : 'text-gray-400'}`}>
-                        {step.number}
-                      </span>
-                    </div>
-                    {/* Content card */}
-                    <div className="ml-16">
-                      <div 
-                        className={`transition-all duration-500 p-5 rounded-lg ${
-                          isActive 
-                            ? 'bg-white border border-[var(--brand-color)] shadow-[0_4px_20px_rgba(0,0,0,0.08)]' 
-                            : 'bg-white/80 border border-gray-200/90 shadow-[0_2px_10px_0_rgba(0,0,0,0.03)]'
-                        }`}
-                      >
-                        <h3 className={`text-xl font-medium mb-2 ${isActive ? 'text-black' : 'text-gray-500'}`}>
-                          {step.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              {timelineSteps.map((step, index) => renderTimelineItem(step, index, isClient))}
             </div>
             {/* Questions Section (mobile only) */}
             <div className="block md:hidden mt-12">

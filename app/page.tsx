@@ -8,6 +8,8 @@ import { LanguageSwitcher } from "@/src/components/language-switcher"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { TimelineWrapper } from "@/components/TimelineWrapper"
 import { BrandScroller } from "@/components/ui/brand-scoller"
+import Testimonial from "@/components/Testimonial"
+import CalEmbedSection from "@/components/CalEmbedSection"
 
 export default function Home() {
   return (
@@ -46,27 +48,18 @@ export default function Home() {
               <LanguageSwitcher />
             </div>
             <Link
-              href="#contact"
+              href="#book-call"
               className="bg-[var(--brand-color)] text-black px-6 md:px-12 py-6 md:py-8 flex items-center hover:bg-[var(--brand-color-hover)] transition-colors text-xl md:text-2xl"
             >
-              LET'S TALK <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
+              LET\'S TALK <ArrowRight className="ml-2 h-5 md:h-6 w-5 md:w-6" />
             </Link>
           </div>
         </header>
       </BlurFade>
 
-      <main className="flex-grow relative">
+      <main className="flex-grow relative mt-6 md:mt-18">
         <BlurFade delay={0.15} duration={0.2}>
-          <section className="container mx-auto px-6 md:px-4 py-12 md:py-16 pb-6 md:pb-8 text-center relative overflow-hidden">
-            <div className="flex justify-center mb-8 md:mb-12 relative">
-              <div className="px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full">
-                <div className="flex items-center px-5 py-2 bg-[#f2f2f2] rounded-full">
-                  <div className="w-3 h-3 rounded-full bg-green-500 mr-2.5 pulse-dot"></div>
-                  <span className="text-gray-600 text-sm font-medium">2 Spots left...</span>
-                </div>
-              </div>
-            </div>
-
+          <section className="container mx-auto px-6 md:px-4 py-12 md:py-16 pt-32 md:pt-40 pb-6 md:pb-8 text-center relative overflow-hidden">
             <BlurFade delay={0.25} duration={0.2}>
               <h1 className="text-4xl font-medium md:text-6xl lg:text-7xl md:font-normal mb-6 max-w-5xl mx-auto leading-tight relative">
                 SAY HELLO TO YOUR 
@@ -78,13 +71,13 @@ export default function Home() {
             <BlurFade delay={0.35} duration={0.2}>
               <p className="text-lg md:text-2xl text-gray-600 max-w-[85%] md:max-w-3xl mx-auto mb-8 md:mb-10 px-2 relative">
                 We take our time to understand your business, then build you <span className="font-bold">tailor-made</span>{" "}
-                AI workers and automations that fit your needs.
+                AI workers and systems that fit your needs.
               </p>
             </BlurFade>
 
             <BlurFade delay={0.45} duration={0.2}>
               <Link
-                href="#demo"
+                href="#book-call"
                 className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors relative"
               >
                 BOOK A CALL <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
@@ -105,6 +98,14 @@ export default function Home() {
         
         <BlurFade delay={0.75} duration={0.2}>
           <TimelineWrapper />
+        </BlurFade>
+
+        <BlurFade delay={0.85} duration={0.2}>
+          <Testimonial />
+        </BlurFade>
+
+        <BlurFade delay={0.95} duration={0.2}>
+          <CalEmbedSection />
         </BlurFade>
       </main>
     </div>
