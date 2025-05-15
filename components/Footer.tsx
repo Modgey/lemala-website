@@ -31,7 +31,7 @@ const Footer = () => {
             />
           </Link>
           <p className="text-sm text-muted-foreground">
-            Tailor-made AI workers and automations for your business.
+            Tailor-made AI workers and systems for your business.
           </p>
         </div>
 

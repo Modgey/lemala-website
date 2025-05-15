@@ -6,6 +6,7 @@ export const BrandScroller = () => {
   const logos = [
     { src: "/testimonial logos/AutoDS.png", alt: "AutoDS", width: 120, height: 40 },
     { src: "/testimonial logos/Mayaparking.png", alt: "Maya Parking", width: 120, height: 40 },
+    { src: "/testimonial logos/GalilEcom.png", alt: "Galil E-commerce Hub", width: 120, height: 40 },
   ];
 
   return (
@@ -58,6 +59,7 @@ export const BrandScrollerReverse = () => {
   const logos = [
     { src: "/testimonial logos/AutoDS.png", alt: "AutoDS", width: 120, height: 40 },
     { src: "/testimonial logos/Mayaparking.png", alt: "Maya Parking", width: 120, height: 40 },
+    { src: "/testimonial logos/GalilEcom.png", alt: "Galil E-commerce Hub", width: 120, height: 40 },
   ];
 
   return (

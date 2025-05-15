@@ -45,7 +45,7 @@ const CalEmbedSection = () => {
           Cal.ns["ai-discovery-call-embed"]("inline", {
             elementOrSelector:"#my-cal-inline-embed",
             config: {"layout":"weekly_view","theme":"light"},
-            calLink: "shawnb/ai-discovery-call",
+            calLink: "shawnb/lemala-discovery-call",
           });
 
           Cal.ns["ai-discovery-call-embed"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"weekly_view"});
