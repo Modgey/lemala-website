@@ -185,10 +185,10 @@ export function HowWeWorkTimelineCSR() {
                     <div className="group">
                       <button
                         onClick={() => toggleQuestion(index)}
-                        className="flex items-center justify-between w-full p-4 text-left text-gray-900 font-medium cursor-pointer"
+                        className="flex items-center justify-between w-full p-4 font-medium cursor-pointer flex-row-reverse ltr:text-left rtl:text-right"
                         aria-expanded={activeQuestion === index}
                       >
-                        <span className="flex-1 pr-2 text-sm md:text-base">{item.question}</span>
+                        <span className="flex-1 text-sm md:text-base pl-2">{item.question}</span>
                         <span className={`flex-shrink-0 transition-transform duration-200 ${activeQuestion === index ? 'rotate-45' : ''}`}>
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 3.33337V12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -211,12 +211,12 @@ export function HowWeWorkTimelineCSR() {
           <div className="relative" ref={timelineContainerRef}>
             {/* This is the background line (gray) */}
             <div
-              className="absolute left-[22px] top-6 w-1 bg-gray-200 z-0 rounded-full"
+              className="absolute top-6 w-1 bg-gray-200 z-0 rounded-full ltr:left-[22px] rtl:right-[22px]"
               style={{ height: lineHeight ? `${lineHeight}px` : undefined }}
             ></div>
             {/* This is the progress line that fills as you scroll (accent color) */}
             <div
-              className="absolute left-[22px] top-6 w-1 bg-[var(--brand-color)] z-1 rounded-full transition-all duration-700 ease-in-out"
+              className="absolute top-6 w-1 bg-[var(--brand-color)] z-1 rounded-full transition-all duration-700 ease-in-out ltr:left-[22px] rtl:right-[22px]"
               style={{
                 height: hasScrolled && lineHeight
                   ? `${Math.min(1, activeStep / timelineSteps.length) * lineHeight}px`
@@ -234,7 +234,7 @@ export function HowWeWorkTimelineCSR() {
                   >
                     {/* Circle with number */}
                     <div 
-                      className={`absolute left-[22px] w-10 h-10 -translate-x-1/2 flex items-center justify-center rounded-full z-10 transition-all duration-500 ease-in-out ${
+                      className={`absolute w-10 h-10 flex items-center justify-center rounded-full z-10 transition-all duration-500 ease-in-out ltr:left-[22px] ltr:-translate-x-1/2 rtl:right-[22px] rtl:translate-x-1/2 ${
                         isActive ? 'bg-[var(--brand-color)]' : 'bg-white border-2 border-gray-200'
                       }`}
                       style={{ top: '24px' }}
@@ -244,7 +244,7 @@ export function HowWeWorkTimelineCSR() {
                       </span>
                     </div>
                     {/* Content card */}
-                    <div className="ml-16">
+                    <div className="ltr:ml-16 rtl:mr-16">
                       <div 
                         className={`p-5 rounded-lg ${
                           isActive 
@@ -273,10 +273,10 @@ export function HowWeWorkTimelineCSR() {
                     <div className="group">
                       <button
                         onClick={() => toggleQuestion(index)}
-                        className="flex items-center justify-between w-full p-4 text-left text-gray-900 font-medium cursor-pointer"
+                        className="flex items-center justify-between w-full p-4 font-medium cursor-pointer flex-row-reverse ltr:text-left rtl:text-right"
                         aria-expanded={activeQuestion === index}
                       >
-                        <span className="flex-1 pr-2 text-sm md:text-base">{item.question}</span>
+                        <span className="flex-1 text-sm md:text-base pl-2">{item.question}</span>
                         <span className={`flex-shrink-0 transition-transform duration-200 ${activeQuestion === index ? 'rotate-45' : ''}`}>
                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 3.33337V12.6667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

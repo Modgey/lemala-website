@@ -5,7 +5,9 @@ import Script from "next/script";
 import { useTranslation } from 'react-i18next';
 
 const CalEmbedSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const calLink = "shawnb/lemala-discovery-call";
+
   return (
     <section id="book-call" className="w-full bg-[var(--section-bg-light)] py-8 md:py-12 relative overflow-hidden">
       <DotPattern
@@ -37,22 +39,37 @@ const CalEmbedSection = () => {
         <div className="max-w-4xl mx-auto bg-white p-1 md:p-4 rounded-lg shadow-xl h-[550px] border border-black-400">
           <div style={{ width: "100%", height: "100%", overflow: "scroll" }} id="my-cal-inline-embed"></div>
         </div>
-        <p className="text-xs text-gray-500 mt-4">{t('cal_embed_note_cal_ui_english')}</p>
       </div>
 
-      {/* Cal.com script */}
-      <Script id="cal-embed-script" strategy="afterInteractive">
+      {/* Cal.com script with dynamic ID and namespace */}
+      <Script id={`cal-embed-script-${i18n.language}`} strategy="afterInteractive">
         {`
-          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-          Cal("init", "ai-discovery-call-embed", {origin:"https://cal.com"});
+          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespaceKey = ar[1]; api.q = api.q || []; if(typeof namespaceKey === "string"){cal.ns[namespaceKey] = cal.ns[namespaceKey] || api;p(cal.ns[namespaceKey], ar);p(cal, ["initNamespace", namespaceKey]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+          
+          (function() {
+            const currentLanguage = "${i18n.language}";
+            const dynamicNamespace = "ai-discovery-call-embed-" + currentLanguage;
+            const calLinkValue = "${calLink}";
 
-          Cal.ns["ai-discovery-call-embed"]("inline", {
-            elementOrSelector:"#my-cal-inline-embed",
-            config: {"layout":"weekly_view","theme":"light"},
-            calLink: "shawnb/lemala-discovery-call",
-          });
+            const embedDiv = document.getElementById("my-cal-inline-embed");
+            if (embedDiv) {
+              embedDiv.innerHTML = ''; // Clear the div before re-initializing
+            }
 
-          Cal.ns["ai-discovery-call-embed"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"weekly_view"});
+            Cal("init", dynamicNamespace, {origin:"https://cal.com"});
+
+            if (Cal.ns && Cal.ns[dynamicNamespace]) {
+              Cal.ns[dynamicNamespace]("inline", {
+                elementOrSelector:"#my-cal-inline-embed",
+                config: {"layout":"weekly_view","theme":"light"},
+                calLink: calLinkValue,
+              });
+
+              Cal.ns[dynamicNamespace]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"weekly_view"});
+            } else {
+              console.warn("Cal.com namespace " + dynamicNamespace + " not ready for embed configuration.");
+            }
+          })();
         `}
       </Script>
     </section>
