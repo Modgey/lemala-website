@@ -97,3 +97,15 @@ body {
 }
 
 /* The pulse-dot animation has been removed as it's no longer needed */
+
+@layer utilities {
+  /* Targets the flex container inside BrandScroller to maintain LTR flow for its children in RTL */
+  html[dir="rtl"] div[class*="py-20"][class*="md:py-24"] > div.relative.w-full > div.relative.flex.overflow-x-hidden {
+    direction: ltr;
+  }
+
+  /* Forces the main page header to maintain LTR layout when page is RTL */
+  html[dir="rtl"] header.flex.items-center.relative {
+    direction: ltr;
+  }
+}

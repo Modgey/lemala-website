@@ -1,6 +1,9 @@
 'use client';
 
 import * as React from "react";
+import { useRouter, usePathname } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
+import i18nConfig from '../../i18nConfig'; // Path to your i18nConfig
 import { UsaFlagIcon } from "./icons/usa-flag";
 import { IsraelFlagIcon } from "./icons/israel-flag";
 import { Button } from "@/components/ui/button";
@@ -13,7 +16,33 @@ import {
 import { cn } from "@/lib/utils";
 
 export function LanguageSwitcher() {
-  const [currentLanguage, setCurrentLanguage] = React.useState("en"); // Default to English
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
+  const router = useRouter();
+  const currentPathname = usePathname();
+
+  const handleChangeLanguage = (newLocale: string) => {
+    // Set cookie for next-i18n-router
+    const days = 30;
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    const expires = date.toUTCString();
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+
+    // Redirect to the new locale path
+    if (
+      currentLocale === i18nConfig.defaultLocale &&
+      !i18nConfig.prefixDefault
+    ) {
+      router.push("/" + newLocale + currentPathname);
+    } else {
+      router.push(
+        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
+      );
+    }
+
+    router.refresh(); // Important to server-render with new locale
+  };
 
   return (
     <DropdownMenu>
@@ -28,13 +57,13 @@ export function LanguageSwitcher() {
           )}
         >
           <div className="flex items-center">
-            {currentLanguage === "en" ? (
+            {currentLocale === "en" ? (
               <UsaFlagIcon className="h-5 w-5 rounded-sm" />
             ) : (
               <IsraelFlagIcon className="h-5 w-5 rounded-sm" />
             )}
             <span className="ml-2 text-sm font-medium">
-              {currentLanguage === "en" ? "EN" : "HE"}
+              {currentLocale === "en" ? "EN" : "HE"}
             </span>
           </div>
           <span className="sr-only">Change language</span>
@@ -45,24 +74,24 @@ export function LanguageSwitcher() {
         className="bg-white border border-gray-200 rounded-md shadow-sm p-1 min-w-32"
       >
         <DropdownMenuItem 
-          onClick={() => setCurrentLanguage("en")}
+          onClick={() => handleChangeLanguage("en")}
           className={cn(
             "rounded flex items-center px-3 py-2 text-sm cursor-pointer",
             "focus:bg-gray-50 focus:text-black focus:ring-0 focus:outline-none",
             "hover:bg-gray-50 hover:text-black",
-            currentLanguage === "en" ? "bg-gray-50" : ""
+            currentLocale === "en" ? "bg-gray-50" : ""
           )}
         >
           <UsaFlagIcon className="mr-2 h-4 w-4 rounded-sm" />
           <span>English</span>
         </DropdownMenuItem>
         <DropdownMenuItem 
-          onClick={() => setCurrentLanguage("he")}
+          onClick={() => handleChangeLanguage("he")}
           className={cn(
             "rounded flex items-center px-3 py-2 text-sm cursor-pointer",
             "focus:bg-gray-50 focus:text-black focus:ring-0 focus:outline-none",
             "hover:bg-gray-50 hover:text-black",
-            currentLanguage === "he" ? "bg-gray-50" : ""
+            currentLocale === "he" ? "bg-gray-50" : ""
           )}
         >
           <IsraelFlagIcon className="mr-2 h-4 w-4 rounded-sm" />
