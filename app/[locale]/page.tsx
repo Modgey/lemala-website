@@ -17,12 +17,14 @@ import TranslationsProvider from "@/components/TranslationsProvider"
 const i18nNamespaces = ['common']
 
 interface HomePageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
 // Note: This page will need to be refactored to use translations
 // and pass the locale to components that need it.
-export default async function Home({ params: { locale } }: HomePageProps) {
+export default async function Home(props: HomePageProps) {
+  const params = await props.params;
+  const { locale } = params;
   const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
   return (

@@ -4,56 +4,55 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { DotPattern } from "@/components/ui/dot-pattern";
+import { useTranslation } from 'react-i18next';
 
 // Limited FAQ data to show only 4 questions
-const limitedFaqData = [
-  {
-    question: "What platforms do Lemala's AI services work with?",
-    answer:
-      "Our AI solutions are designed to be flexible and can integrate with a wide variety of platforms, including popular CRMs, ERP systems, e-commerce platforms, and custom-built applications. We work closely with you to ensure seamless integration.",
-  },
-  {
-    question: "How are Lemala's services priced?",
-    answer:
-      "Pricing is tailored to the specific solution and complexity of your needs. We offer a transparent pricing model, which typically involves an initial setup fee and a recurring subscription based on usage or the scope of services. We provide detailed quotes after an initial consultation.",
-  },
-  {
-    question: "How long does it take to implement Lemala's AI services?",
-    answer:
-      "The timeline for implementing our AI solutions can vary depending on the service you choose. Generally, projects can take anywhere from 3 to 6 weeks from start to finish. We pride ourselves on efficient and timely service delivery, ensuring your business can start reaping the benefits of AI as soon as possible.",
-  },
-  {
-    question: "Does Lemala offer ongoing management and improvement services?",
-    answer:
-      "Yes, we offer ongoing support, management, and continuous improvement services to ensure your AI solutions remain effective, up-to-date, and aligned with your evolving business goals. This includes performance monitoring, updates, and optimizations.",
-  },
-];
-
-// Timeline steps data
-const timelineSteps = [
-  {
-    number: 1,
-    title: "Day 1: Discovery Call",
-    description: "We deep dive into your business goals, brand identity, and specific needs to understand exactly what AI solution will drive the most value for you."
-  },
-  {
-    number: 2,
-    title: "Week 1: Development & Testing",
-    description: "Our team builds and refines your custom AI solution, training it with your data and testing it against your real-world scenarios to ensure optimal performance."
-  },
-  {
-    number: 3,
-    title: "Week 2: Solution Delivery",
-    description: "We deliver your fully-functioning AI solution, integrate it with your existing systems, and provide comprehensive training for your team to hit the ground running."
-  },
-  {
-    number: 4,
-    title: "Ongoing: Results & Growth",
-    description: "Experience immediate results while we provide continuous improvements, performance monitoring, and updates to ensure your AI solution evolves with your business."
-  }
-];
-
 export function HowWeWorkTimelineCSR() {
+  const { t } = useTranslation();
+
+  const limitedFaqData = [
+    {
+      question: t('timeline_faq1_q'),
+      answer: t('timeline_faq1_a'),
+    },
+    {
+      question: t('timeline_faq2_q'),
+      answer: t('timeline_faq2_a'),
+    },
+    {
+      question: t('timeline_faq3_q'),
+      answer: t('timeline_faq3_a'),
+    },
+    {
+      question: t('timeline_faq4_q'),
+      answer: t('timeline_faq4_a'),
+    },
+  ];
+
+  // Timeline steps data
+  const timelineSteps = [
+    {
+      number: 1,
+      title: t('timeline_step1_title'),
+      description: t('timeline_step1_desc')
+    },
+    {
+      number: 2,
+      title: t('timeline_step2_title'),
+      description: t('timeline_step2_desc')
+    },
+    {
+      number: 3,
+      title: t('timeline_step3_title'),
+      description: t('timeline_step3_desc')
+    },
+    {
+      number: 4,
+      title: t('timeline_step4_title'),
+      description: t('timeline_step4_desc')
+    }
+  ];
+
   const [activeStep, setActiveStep] = useState(0);
   const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
   const timelineRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -163,22 +162,23 @@ export function HowWeWorkTimelineCSR() {
             <div className="mb-6">
               <div className="inline-block px-[1px] py-[1px] bg-gradient-to-r from-gray-300/50 via-gray-400/70 to-gray-300/50 rounded-full mb-4">
                 <div className="flex items-center px-5 py-2 bg-[#f2f2f2] rounded-full">
-                  <span className="text-gray-600 text-sm font-medium">How we work</span>
+                  <span className="text-gray-600 text-sm font-medium">{t('timeline_how_we_work')}</span>
                 </div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-medium mb-6 leading-tight">
-                Get your <span className="text-[var(--brand-color-text)] italic font-bold">Custom</span> AI solution<br />in just 2 weeks
-              </h2>
+              <h2 
+                className="text-4xl md:text-5xl font-medium mb-6 leading-tight"
+                dangerouslySetInnerHTML={{ __html: t('timeline_title_raw_html') }}
+              />
               <Link
                 href="#book-call"
                 className="inline-flex items-center bg-[var(--brand-color)] text-black px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium hover:bg-[var(--brand-color-hover)] transition-colors mb-12"
               >
-                Book A Call <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
+                {t('timeline_book_call')} <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
               </Link>
             </div>
             {/* Questions Section (desktop only) */}
             <div className="mt-auto hidden md:block">
-              <h3 className="text-2xl md:text-3xl font-medium mb-6">Questions</h3>
+              <h3 className="text-2xl md:text-3xl font-medium mb-6">{t('timeline_questions_title')}</h3>
               <div className="space-y-3">
                 {limitedFaqData.map((item, index) => (
                   <div key={index} className="bg-white border border-gray-200/90 rounded-lg shadow-[0_2px_10px_0_rgba(0,0,0,0.03)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)]">

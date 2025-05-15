@@ -1,20 +1,23 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdEmail } from 'react-icons/md';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const solutions = [
-    { name: 'AI Workers', href: '/solutions/ai-workers' },
-    { name: 'Automations', href: '/solutions/automations' },
-    { name: 'Consulting', href: '/solutions/consulting' },
+    { name: t('footer_solution_ai_workers'), href: '/solutions/ai-workers' },
+    { name: t('footer_solution_automations'), href: '/solutions/automations' },
+    { name: t('footer_solution_consulting'), href: '/solutions/consulting' },
   ];
 
   const navigationLinks = [
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'FAQ', href: '#how-we-work' },
+    { name: t('nav_solutions'), href: '#solutions' },
+    { name: t('nav_testimonials'), href: '#testimonials' },
+    { name: t('nav_faq'), href: '#how-we-work' },
   ];
 
   return (
@@ -31,12 +34,12 @@ const Footer = () => {
             />
           </Link>
           <p className="text-sm text-muted-foreground">
-            Tailor-made AI workers and systems for your business.
+            {t('footer_tagline')}
           </p>
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Navigation</h3>
+          <h3 className="text-lg font-semibold mb-4">{t('footer_navigation_title')}</h3>
           <ul className="space-y-2">
             {navigationLinks.map((item) => (
               <li key={item.name}>
@@ -49,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Our Solutions</h3>
+          <h3 className="text-lg font-semibold mb-4">{t('footer_our_solutions_title')}</h3>
           <ul className="space-y-2">
             {solutions.map((item) => (
               <li key={item.name}>
@@ -62,7 +65,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-4">Contact</h3>
+          <h3 className="text-lg font-semibold mb-4">{t('footer_contact_title')}</h3>
           <div className="space-y-2">
             <Link 
               href="mailto:shawn@lemala.agency" 
@@ -77,13 +80,13 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 md:px-6 mt-8 pt-8 border-t border-border">
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Lemala. All rights reserved.</p>
+          <p>&copy; {currentYear} {t('footer_copyright')}</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="/privacy-policy" className="hover:text-[var(--brand-color-text)] transition-colors">
-              Privacy Policy
+              {t('footer_privacy_policy')}
             </Link>
             <Link href="/terms-of-service" className="hover:text-[var(--brand-color-text)] transition-colors">
-              Terms of Service
+              {t('footer_terms_of_service')}
             </Link>
           </div>
         </div>

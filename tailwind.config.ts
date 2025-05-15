@@ -9,6 +9,11 @@ const config = {
     "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'italic',
+    'font-bold',
+    'text-[var(--brand-color-text)]',
+  ],
   prefix: "",
   theme: {
     container: {

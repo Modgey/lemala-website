@@ -1,0 +1,5 @@
+[Cursor] Fix: Resolve param async errors and style accented text
+
+- Updated app/[locale]/page.tsx and app/[locale]/layout.tsx to correctly await params as required by Next.js 15 for async server components. This resolves the 'params should be awaited' error.
+- Added 'italic', 'font-bold', and 'text-[var(--brand-color-text)]' to the safelist in tailwind.config.ts. This ensures Tailwind generates these utility classes even when they only appear in dynamically rendered HTML from translation strings, fixing the styling for accented words.
+- These changes also ensure the development server starts cleanly without the previous next.config.mjs related errors or param access issues. 

@@ -1,6 +1,7 @@
 "use client";
  
 import Image from "next/image";
+import { useTranslation } from 'react-i18next';
  
 export const BrandScroller = () => {
   const logos = [
@@ -8,11 +9,12 @@ export const BrandScroller = () => {
     { src: "/testimonial logos/Mayaparking.png", alt: "Maya Parking", width: 120, height: 40 },
     { src: "/testimonial logos/GalilEcom.png", alt: "Galil E-commerce Hub", width: 120, height: 40 },
   ];
+  const { t } = useTranslation();
 
   return (
     <div className="w-full py-20 md:py-24 relative">
       <div className="container mx-auto px-6 text-center mb-8 relative z-10">
-        <h3 className="text-lg font-medium text-gray-600">Trusted by innovative companies</h3>
+        <h3 className="text-lg font-medium text-gray-600">{t('brand_scroller_trusted_by')}</h3>
       </div>
       
       <div className="relative w-full">
