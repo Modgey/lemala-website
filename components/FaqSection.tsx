@@ -13,29 +13,24 @@ import { cn } from "@/lib/utils";
 
 const faqData = [
   {
-    question: "What platforms do Lemala's AI services work with?",
+    question: "How long does it take to get my AI solution?",
     answer:
-      "Our AI solutions are designed to be flexible and can integrate with a wide variety of platforms, including popular CRMs, ERP systems, e-commerce platforms, and custom-built applications. We work closely with you to ensure seamless integration.",
+      "We typically deliver your custom AI solution within a 2-week timeframe, from initial consultation to full implementation. We\'re committed to efficient and timely delivery, ensuring you can start benefiting from AI enhancements quickly. Throughout the development process, we maintain transparent communication, providing regular updates on our progress.",
   },
   {
-    question: "How are Lemala's services priced?",
+    question: "How do you ensure the quality of your solutions?",
     answer:
-      "Pricing is tailored to the specific solution and complexity of your needs. We offer a transparent pricing model, which typically involves an initial setup fee and a recurring subscription based on usage or the scope of services. We provide detailed quotes after an initial consultation.",
+      "Quality is paramount. Every solution undergoes a rigorous testing period of at least one week to ensure robustness and reliability. For those who choose our maintenance package, we provide ongoing updates, performance enhancements, and proactive bug fixes to keep your AI systems operating at peak efficiency.",
   },
   {
-    question: "Where can I see examples of Lemala's work?",
+    question: "How do you tailor your AI to my needs?",
     answer:
-      "We have several case studies and success stories from various industries. Please visit our 'Portfolio' or 'Case Studies' section, or contact us for specific examples relevant to your business needs.",
+      "Our process begins with a deep dive into your specific business requirements, operational workflows, and strategic goals. We don\'t offer one-size-fits-all solutions. Instead, we meticulously analyze your unique challenges and opportunities to design and build an AI system that integrates seamlessly and delivers measurable results precisely where you need them most.",
   },
   {
-    question: "How long does it take to implement Lemala's AI services?",
+    question: "Do you offer ongoing maintenance and updates?",
     answer:
-      "The timeline for implementing our AI solutions can vary depending on the service you choose. Generally, projects can take anywhere from 3 to 6 weeks from start to finish. We pride ourselves on efficient and timely service delivery, ensuring that your e-commerce business can start reaping the benefits of AI as soon as possible. Our team will work closely with you to establish a clear timeline and keep you updated every step of the way.",
-  },
-  {
-    question: "Does Lemala offer ongoing management and improvement services?",
-    answer:
-      "Yes, we offer ongoing support, management, and continuous improvement services to ensure your AI solutions remain effective, up-to-date, and aligned with your evolving business goals. This includes performance monitoring, updates, and optimizations.",
+      "Absolutely. We offer an optional, comprehensive maintenance package designed to ensure your AI solutions evolve with your business. This includes continuous performance monitoring, regular system updates, new feature rollouts based on the latest AI advancements, and prompt bug fixes, guaranteeing long-term value and optimal performance.",
   },
 ];
 

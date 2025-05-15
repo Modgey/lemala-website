@@ -38,7 +38,7 @@ export default function Home() {
             <Link href="#testimonials" className="text-black text-sm font-medium hover:text-gray-700 transition-colors">
               TESTIMONIALS
             </Link>
-            <Link href="#faq" className="text-black text-sm font-medium hover:text-gray-700 transition-colors">
+            <Link href="#how-we-work" className="text-black text-sm font-medium hover:text-gray-700 transition-colors">
               FAQ
             </Link>
           </nav>

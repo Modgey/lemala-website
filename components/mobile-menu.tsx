@@ -41,7 +41,7 @@ export default function MobileMenu() {
               TESTIMONIALS
             </Link>
             <Link
-              href="#faq"
+              href="#how-we-work"
               className="text-black font-medium hover:text-gray-700 transition-colors"
               onClick={() => setIsOpen(false)}
             >
