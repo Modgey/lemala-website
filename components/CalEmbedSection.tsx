@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 const CalEmbedSection = () => {
   const { t, i18n } = useTranslation();
-  const calLink = "shawnb/lemala-discovery-call";
+  const calLink = "shawnbooker/ai-discovery-call";
 
   return (
     <section id="book-call" className="w-full bg-[var(--section-bg-light)] py-8 md:py-12 relative overflow-hidden">
